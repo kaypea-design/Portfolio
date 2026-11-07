@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manela case study | Kim Papillon</title>
+<meta name="description" content="Kim Papillon, product designer and UX researcher in Montréal: experiences, interfaces and research.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232a5ad6'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='white' text-anchor='middle'%3EKP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;display=swap">
+<style>
+html,body{max-width:100%;overflow-x:clip}
+img,video{max-width:100%}
+body{margin:0;background:#fbfcff}
+a{color:#2a5ad6}a:hover{color:#1f4cc0}
+.zoomable{transition:opacity .25s}
+.zoomable:hover{opacity:.9}
+.zoomable:focus-visible{outline:2px solid #2a5ad6;outline-offset:3px}
+.crumb a{color:#55607a;text-decoration:none}.crumb a:hover{color:#2a5ad6;text-decoration:underline}
+.home{color:#252a36;text-decoration:none}.home:hover{color:#2a5ad6}
+.nextcard{transition:transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s, border-color .3s}
+.nextcard:hover{transform:translateY(-4px);border-color:rgba(47,107,255,.35);box-shadow:0 18px 40px -28px rgba(30,35,50,.3)}
+.nextcard .nimg{transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
+.nextcard:hover .nimg{transform:scale(1.03)}
+.carbtn{transition:background .25s, transform .3s cubic-bezier(.16,1,.3,1)}
+.carbtn:hover{background:#e6eeff;transform:scale(1.06)}
+.cartrack{animation:slidein .5s cubic-bezier(.16,1,.3,1)}
+@keyframes slidein{from{opacity:.4;transform:translateX(24px)}to{opacity:1;transform:none}}
+.carcard{transition:transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s, border-color .3s}
+.carcard:hover{transform:translateY(-4px);border-color:rgba(47,107,255,.35);box-shadow:0 18px 40px -28px rgba(30,35,50,.3)}
+.carcard .cimg{transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
+.carcard:hover .cimg{transform:scale(1.03)}
+@media (max-width: 700px){.carcard{flex-basis:100% !important}}
+.back{transition:color .25s}
+.back .arr{display:inline-block;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.back:hover .arr{transform:translateX(-4px)}
+.card{transition:transform .45s cubic-bezier(.16,1,.3,1), box-shadow .45s}
+.card:hover{transform:translateY(-3px);box-shadow:0 16px 32px -24px rgba(30,35,50,.25)}
+.nextcard .arr{display:inline-block;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.nextcard:hover .arr{transform:translateX(6px)}
+@media (max-width: 700px){
+  .paper{background-image:repeating-linear-gradient(180deg, transparent 0, transparent 31px, rgba(47,107,255,.04) 31px, rgba(47,107,255,.04) 32px) !important}
+  .hwrap,.mwrap{padding-left:16px !important;padding-right:16px !important}
+  .mwrap{gap:48px !important;padding-top:32px !important}
+  .mwrap section{padding-top:24px !important}
+  .card{padding:18px !important}
+  .mwrap figure img,.cimg{aspect-ratio:auto !important;height:auto !important;object-fit:contain !important;transform:none !important}
+}
+.rise{animation:rise .9s cubic-bezier(.16,1,.3,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.rise{animation:none}.card,.back .arr,.nextcard .arr{transition:none}.card:hover{transform:none}}
+</style>
+
+<style>
+#lightbox{display:flex}
+#lightbox[hidden]{display:none !important}
+</style>
+</head>
+<body>
+<div class="paper" style="min-height: 100vh; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #252a36; -webkit-font-smoothing: antialiased; background-color: #fbfcff; background-image: linear-gradient(90deg, transparent 39px, rgba(220,68,68,.32) 39px, rgba(220,68,68,.32) 40px, transparent 40px), repeating-linear-gradient(180deg, transparent 0, transparent 31px, rgba(47,107,255,.04) 31px, rgba(47,107,255,.04) 32px)">
+
+  <header style="border-bottom: 1px solid rgba(47,107,255,.16); background: #ffffff">
+    <div class="hwrap" style="max-width: 1080px; margin: 0 auto; box-sizing: border-box; padding: 32px clamp(20px, 5vw, 64px) 14px clamp(60px, 6vw, 80px); display: flex; align-items: center; min-height: 72px">
+      <a href="index.html" class="home" style="display: inline-flex; flex-direction: column; gap: 2px; min-height: 44px; justify-content: center"><span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 26px; font-weight: 400; letter-spacing: -0.01em; line-height: 1">Kim Papillon</span><span style="font-size: 12px; color: #55607a">Experiences, Interfaces and Research</span></a>
+    </div>
+  </header>
+
+  <main class="mwrap" style="max-width: 1080px; margin: 0 auto; box-sizing: border-box; padding: 56px clamp(20px, 5vw, 64px) 80px clamp(60px, 6vw, 80px); display: flex; flex-direction: column; gap: 64px">
+
+    <div class="rise" style="display: flex; flex-direction: column; gap: 18px">
+      <nav aria-label="Breadcrumb" class="crumb"><ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 14px; color: #55607a"><li><a href="index.html">Work</a></li><li aria-hidden="true">/</li><li aria-current="page" style="color: #252a36; font-weight: 600">Manela</li></ol></nav>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="padding: 6px 12px; border-radius: 100px; background: #2a5ad6; color: #ffffff; font-size: 11px; font-weight: 600; letter-spacing: 0.04em">Founding Designer</span></div>
+      <h1 style="margin: 0; font-size: clamp(40px, 6vw, 72px); line-height: 0.98; letter-spacing: -0.04em; font-weight: 700">Manela</h1>
+      <p style="margin: 0; font-size: clamp(17px, 1.6vw, 21px); line-height: 1.5; color: #46506a; max-width: 60ch">A SaaS platform that helps new parents understand government policy, workplace entitlements and what their finances will look like on leave.</p>
+      <dl style="margin: 12px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); gap: 20px 32px; padding-top: 24px; border-top: 1px solid rgba(47,107,255,.14)">
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <dt style="font-size: 12px; font-weight: 600; color: #55607a">Role</dt>
+          <dd style="margin: 0; font-size: 15px; line-height: 1.5">Founding designer: product design, UX research and front-end development</dd>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <dt style="font-size: 12px; font-weight: 600; color: #55607a">Product</dt>
+          <dd style="margin: 0; font-size: 15px; line-height: 1.5">SaaS parental leave platform for parents and employers</dd>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <dt style="font-size: 12px; font-weight: 600; color: #55607a">Tools</dt>
+          <dd style="margin: 0; font-size: 15px; line-height: 1.5">Figma, Supabase, Vercel</dd>
+        </div>
+      </dl>
+    </div>
+
+    <figure class="rise" style="animation-delay: .1s; margin: 0; border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #f3f6ff">
+      <button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/manela-onboarding.webp" alt="Manela onboarding screen asking which parental leave plan applies" style="display: block; width: 100%; aspect-ratio: 16 / 8; object-fit: cover"></button>
+    </figure>
+
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">01</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">The problem</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 16px">
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            
+            <h3 style="margin: 0; font-size: 17px">Isolation</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Employees had no central place to find support, track their leave status or get answers to basic questions.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            
+            <h3 style="margin: 0; font-size: 17px">Hidden compliance complexity</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Entitlements vary by location, employment type and tenure, and existing tools did not make this clear.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            
+            <h3 style="margin: 0; font-size: 17px">Opaque finances</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Employees could not tell what they would actually be paid on leave, which made taking their full entitlement stressful.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">02</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">Who it’s for</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/manela-parents.webp" alt="Three new parents with their young children" style="display: block; width: 100%; aspect-ratio: 16 / 8; object-fit: cover"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">New parents trying to understand government policy and their workplace entitlements at the same time.</figcaption></figure>
+        <p style="margin: 0; padding: 20px 24px; background: #eef3ff; border-radius: 14px; font-size: 18px; line-height: 1.55">How might new parents understand the government application process, their workplace entitlements and the financial changes that come with a reduced income?</p>
+      </div>
+    </section>
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">03</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">Design principles</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 16px">
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">A</span>
+            <h3 style="margin: 0; font-size: 17px">Clarity over completeness</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Show only what is needed, when it is needed, through progressive disclosure.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">B</span>
+            <h3 style="margin: 0; font-size: 17px">Trust through transparency</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Financial and compliance figures are personal and based on the user’s own situation.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">C</span>
+            <h3 style="margin: 0; font-size: 17px">Guided, not gated</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">The experience should feel like a knowledgeable guide, not a bureaucratic form.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">04</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">Scenario Planner: before and after</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 24px"><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><span style="align-self: flex-start; padding: 5px 12px; border-radius: 100px; background: #eef0f4; color: #46506a; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase">Before</span><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/manela-planner-before.webp" alt="Earlier Scenario Planner with a long form and bar chart" style="display: block; width: 100%; aspect-ratio: 1 / 0.9; object-fit: cover; object-position: top left"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">The earlier planner asked for everything up front in a long form, then showed a dense chart and shareable-week tables. Parents struggled to see how long each person would be off, when payouts changed, and what the household would receive.</figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><span style="align-self: flex-start; padding: 5px 12px; border-radius: 100px; background: #2a5ad6; color: #ffffff; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase">After</span><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/manela-planner-after.webp" alt="Redesigned scenario showing a leave timeline and totals" style="display: block; width: 100%; aspect-ratio: 1 / 0.9; object-fit: cover; object-position: top left"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">The redesign turns the result into a plain-language timeline: when each parent’s leave starts, what they receive each month, and a combined total. “Try new shared weeks” lets parents compare scenarios without starting over.</figcaption></figure></div>
+        <p style="margin: 0; font-size: 17px; line-height: 1.65">The shift: from a calculator that showed numbers to a guide that tells a story about your leave, organized into <strong>Timeline</strong>, <strong>Sharing leave</strong> and <strong>Breakdown</strong>.</p>
+      </div>
+    </section>
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">05</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">A guided mobile flow</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <p style="margin: 0; font-size: 17px; line-height: 1.65">On mobile, planning became a step-by-step flow that asks about goals first, then shows the result.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 24px 20px"><figure style="margin: 0; display: flex; flex-direction: column; gap: 12px"><div style="height: 520px; overflow-y: auto; border: 1px solid rgba(47,107,255,.16); border-radius: 18px; background: #f6f2ec; box-shadow: 0 10px 26px -20px rgba(30,35,50,.3)"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/manela-mobile-goals.webp" alt="Plan comparison based on goals" style="display: block; width: 100%; height: auto"></button></div><figcaption style="display: flex; flex-direction: column; gap: 4px"><strong style="font-size: 16px">Based on your goals</strong><span style="font-size: 14px; line-height: 1.55; color: #46506a">Compares the longer and shorter plans side by side and recommends one based on what both parents want.</span></figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 12px"><div style="height: 520px; overflow-y: auto; border: 1px solid rgba(47,107,255,.16); border-radius: 18px; background: #f6f2ec; box-shadow: 0 10px 26px -20px rgba(30,35,50,.3)"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/manela-mobile-share.webp" alt="Month grid to split leave between parents" style="display: block; width: 100%; height: auto"></button></div><figcaption style="display: flex; flex-direction: column; gap: 4px"><strong style="font-size: 16px">Share the leave</strong><span style="font-size: 14px; line-height: 1.55; color: #46506a">Parents tap months to allocate or split leave, and see when payouts end.</span></figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 12px"><div style="height: 520px; overflow-y: auto; border: 1px solid rgba(47,107,255,.16); border-radius: 18px; background: #f6f2ec; box-shadow: 0 10px 26px -20px rgba(30,35,50,.3)"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/manela-mobile-scenario.webp" alt="Mobile leave timeline with payout periods" style="display: block; width: 100%; height: auto"></button></div><figcaption style="display: flex; flex-direction: column; gap: 4px"><strong style="font-size: 16px">Your scenario</strong><span style="font-size: 14px; line-height: 1.55; color: #46506a">A timeline of payout periods that flags when each parent’s payments drop, with a summary below.</span></figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 12px"><div style="height: 520px; overflow-y: auto; border: 1px solid rgba(47,107,255,.16); border-radius: 18px; background: #f6f2ec; box-shadow: 0 10px 26px -20px rgba(30,35,50,.3)"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/manela-eligibility.webp" alt="Eligibility checker for EI" style="display: block; width: 100%; height: auto"></button></div><figcaption style="display: flex; flex-direction: column; gap: 4px"><strong style="font-size: 16px">Eligibility checker</strong><span style="font-size: 14px; line-height: 1.55; color: #46506a">Parents add recent jobs to see right away whether they meet the 600 insurable hour minimum for EI.</span></figcaption></figure></div>
+      </div>
+    </section>
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">06</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">Leave guides</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <p style="margin: 0; font-size: 17px; line-height: 1.65">Beyond the numbers, parents needed to know what to do and when. The guides turn leave into a calm, dated checklist.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 24px 20px"><figure style="margin: 0; display: flex; flex-direction: column; gap: 12px"><div style="height: 620px; overflow-y: auto; border: 1px solid rgba(47,107,255,.16); border-radius: 18px; background: #f6f2ec; box-shadow: 0 10px 26px -20px rgba(30,35,50,.3)"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/manela-planning-guide.webp" alt="Planning guide with a pre-leave timeline" style="display: block; width: 100%; height: auto"></button></div><figcaption style="display: flex; flex-direction: column; gap: 4px"><strong style="font-size: 16px">Planning guide</strong><span style="font-size: 14px; line-height: 1.55; color: #46506a">Enter a leave start date and get a week-by-week timeline: talk to your manager, clarify pay and benefits, create a clean handoff, then what to do while you are away. Scroll to explore.</span></figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 12px"><div style="height: 620px; overflow-y: auto; border: 1px solid rgba(47,107,255,.16); border-radius: 18px; background: #f6f2ec; box-shadow: 0 10px 26px -20px rgba(30,35,50,.3)"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/manela-onleave-guide.webp" alt="On-leave guide for the first days of parenthood" style="display: block; width: 100%; height: auto"></button></div><figcaption style="display: flex; flex-direction: column; gap: 4px"><strong style="font-size: 16px">On-leave guide</strong><span style="font-size: 14px; line-height: 1.55; color: #46506a">Once leave begins, the focus moves to the early days: admin like Records of Employment, nearby classes and supportive content.</span></figcaption></figure></div>
+      </div>
+    </section>
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">07</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">Manela for companies</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <p style="margin: 0; font-size: 17px; line-height: 1.65">To reach parents through their employers, Manela also offers a branded hub for companies that brings their policy, top-ups, benefits and contacts into one place.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 24px 20px"><figure style="margin: 0; display: flex; flex-direction: column; gap: 12px"><div style="height: 620px; overflow-y: auto; border: 1px solid rgba(47,107,255,.16); border-radius: 18px; background: #f6f2ec; box-shadow: 0 10px 26px -20px rgba(30,35,50,.3)"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/manela-companies.webp" alt="Manela for companies landing page" style="display: block; width: 100%; height: auto"></button></div><figcaption style="display: flex; flex-direction: column; gap: 4px"><strong style="font-size: 16px">For employers</strong><span style="font-size: 14px; line-height: 1.55; color: #46506a">Explains the employee hub, the Manela concierge and a five-step onboarding: discovery call, intake form, build, review, live.</span></figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 12px"><div style="height: 620px; overflow-y: auto; border: 1px solid rgba(47,107,255,.16); border-radius: 18px; background: #f6f2ec; box-shadow: 0 10px 26px -20px rgba(30,35,50,.3)"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/manela-employer-hub.webp" alt="Employer parental leave hub" style="display: block; width: 100%; height: auto"></button></div><figcaption style="display: flex; flex-direction: column; gap: 4px"><strong style="font-size: 16px">The employee hub</strong><span style="font-size: 14px; line-height: 1.55; color: #46506a">What employees see: salary top-ups on top of EI or QPIP, accommodations, extra benefits, who to talk to and a 1:1 concierge.</span></figcaption></figure></div>
+      </div>
+    </section>
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">08</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">Try the prototype</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 32px 48px">
+          <div style="flex: none; width: 300px; max-width: 100%; box-sizing: border-box; padding: 12px; border-radius: 48px; background: #1f2330; box-shadow: 0 30px 60px -36px rgba(30,35,50,.45)">
+            <div style="aspect-ratio: 340 / 760; border-radius: 37px; overflow-y: auto; background: #f9f8f5"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/manela-mobile-share.webp" alt="Manela prototype: decide how to share parental leave" style="display: block; width: 100%; height: auto"></button></div>
+          </div>
+          <div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+            <p style="margin: 0; font-size: 17px; line-height: 1.65">Walk through onboarding, leave sharing and the Scenario Planner yourself in the live prototype, best viewed on your phone.</p>
+            <a href="https://demo.manela.ca" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-size: 16px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px">Open demo.manela.ca <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer style="display: flex; flex-direction: column; gap: 16px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.16)">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px">
+        <h2 style="margin: 0; font-size: 22px; letter-spacing: -0.02em">More case studies</h2>
+        <div style="display: flex; gap: 10px">
+          <button type="button" class="carbtn" data-car="prev" aria-label="Previous case studies" style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(47,107,255,.2); background: #ffffff; color: #2a5ad6; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg></button>
+          <button type="button" class="carbtn" data-car="next" aria-label="Next case studies" style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(47,107,255,.2); background: #ffffff; color: #2a5ad6; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></button>
+        </div>
+      </div>
+      <div style="overflow: hidden">
+        <div class="cartrack" style="display: flex; gap: 16px">
+          
+            <a href="university-of-montreal.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #f3f6ff"><img class="cimg" src="assets/udem-campus.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">University of Montreal</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">Making the new French admission requirements easier to understand.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+            <a href="planmonark.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #ffffff"><img class="cimg" src="assets/planmonark-menus.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">PlanMonark</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">A usability evaluation (n=16) of a survey creation platform.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+            <a href="movingwaldo.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #f3f6ff"><img class="cimg" src="assets/movingwaldo-screens.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">MovingWaldo</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">Canada-wide movers booking platform.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+            <a href="biovia.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #f3f6ff"><img class="cimg" src="assets/biovia-scientists.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">Dassault Systèmes BIOVIA</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">Rethinking ONE Lab’s batch release workflow for scientists.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+            <a href="hope-and-cope.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #d9e6f5"><img class="cimg" src="assets/hopecope-hero.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">Hope &amp; Cope</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">Helping patients and caregivers find cancer support at the right time.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <div id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Enlarged image" style="position: fixed; inset: 0; z-index: 50; overflow-y: auto; background: rgba(20,24,34,.86); box-sizing: border-box; padding: 64px 20px 40px; display: flex; justify-content: center; align-items: flex-start; cursor: zoom-out">
+    <button type="button" data-close-btn aria-label="Close enlarged image" style="position: fixed; top: 16px; right: 16px; width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(255,255,255,.3); background: rgba(255,255,255,.12); color: #ffffff; font-size: 22px; line-height: 1; cursor: pointer">×</button>
+    <img id="lightbox-img" src="" alt="" style="display: block; width: auto; max-width: min(1400px, 100%); height: auto; margin: auto 0; border-radius: 10px; background: #ffffff; box-shadow: 0 30px 80px -20px rgba(0,0,0,.6); cursor: default">
+  </div>
+
+</div>
+<script>
+(function () {
+  var lb = document.getElementById('lightbox'), lbImg = document.getElementById('lightbox-img'), last = null;
+  function close() { lb.hidden = true; lbImg.src = ''; document.body.style.overflow = ''; if (last) last.focus(); }
+  document.querySelectorAll('[data-zoom]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var img = b.querySelector('img'); if (!img) return;
+      last = b; lbImg.src = img.currentSrc || img.src; lbImg.alt = img.alt || '';
+      lb.hidden = false; document.body.style.overflow = 'hidden'; lb.querySelector('[data-close-btn]').focus();
+    });
+  });
+  lb.addEventListener('click', function (e) { if (e.target !== lbImg) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !lb.hidden) close(); });
+  var track = document.querySelector('.cartrack');
+  var next = document.querySelector('[data-car="next"]'), prev = document.querySelector('[data-car="prev"]');
+  if (track && next && prev) {
+    next.addEventListener('click', function () { track.appendChild(track.firstElementChild); });
+    prev.addEventListener('click', function () { track.insertBefore(track.lastElementChild, track.firstElementChild); });
+  }
+})();
+</script>
+</body>
+</html>

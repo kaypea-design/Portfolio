@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BIOVIA case study | Kim Papillon</title>
+<meta name="description" content="Kim Papillon, product designer and UX researcher in Montréal: experiences, interfaces and research.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232a5ad6'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='white' text-anchor='middle'%3EKP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;display=swap">
+<style>
+html,body{max-width:100%;overflow-x:clip}
+img,video{max-width:100%}
+body{margin:0;background:#fbfcff}
+a{color:#2a5ad6}a:hover{color:#1f4cc0}
+.zoomable{transition:opacity .25s}
+.zoomable:hover{opacity:.9}
+.zoomable:focus-visible{outline:2px solid #2a5ad6;outline-offset:3px}
+.crumb a{color:#55607a;text-decoration:none}.crumb a:hover{color:#2a5ad6;text-decoration:underline}
+.home{color:#252a36;text-decoration:none}.home:hover{color:#2a5ad6}
+.nextcard{transition:transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s, border-color .3s}
+.nextcard:hover{transform:translateY(-4px);border-color:rgba(47,107,255,.35);box-shadow:0 18px 40px -28px rgba(30,35,50,.3)}
+.nextcard .nimg{transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
+.nextcard:hover .nimg{transform:scale(1.03)}
+.carbtn{transition:background .25s, transform .3s cubic-bezier(.16,1,.3,1)}
+.carbtn:hover{background:#e6eeff;transform:scale(1.06)}
+.cartrack{animation:slidein .5s cubic-bezier(.16,1,.3,1)}
+@keyframes slidein{from{opacity:.4;transform:translateX(24px)}to{opacity:1;transform:none}}
+.carcard{transition:transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s, border-color .3s}
+.carcard:hover{transform:translateY(-4px);border-color:rgba(47,107,255,.35);box-shadow:0 18px 40px -28px rgba(30,35,50,.3)}
+.carcard .cimg{transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
+.carcard:hover .cimg{transform:scale(1.03)}
+@media (max-width: 700px){.carcard{flex-basis:100% !important}}
+.back{transition:color .25s}
+.back .arr{display:inline-block;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.back:hover .arr{transform:translateX(-4px)}
+.card{transition:transform .45s cubic-bezier(.16,1,.3,1), box-shadow .45s}
+.card:hover{transform:translateY(-3px);box-shadow:0 16px 32px -24px rgba(30,35,50,.25)}
+.nextcard .arr{display:inline-block;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.nextcard:hover .arr{transform:translateX(6px)}
+@media (max-width: 700px){
+  .paper{background-image:repeating-linear-gradient(180deg, transparent 0, transparent 31px, rgba(47,107,255,.04) 31px, rgba(47,107,255,.04) 32px) !important}
+  .hwrap,.mwrap{padding-left:16px !important;padding-right:16px !important}
+  .mwrap{gap:48px !important;padding-top:32px !important}
+  .mwrap section{padding-top:24px !important}
+  .card{padding:18px !important}
+  .mwrap figure img,.cimg{aspect-ratio:auto !important;height:auto !important;object-fit:contain !important;transform:none !important}
+}
+.rise{animation:rise .9s cubic-bezier(.16,1,.3,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.rise{animation:none}.card,.back .arr,.nextcard .arr{transition:none}.card:hover{transform:none}}
+</style>
+
+<style>
+#lightbox{display:flex}
+#lightbox[hidden]{display:none !important}
+</style>
+</head>
+<body>
+<div class="paper" style="min-height: 100vh; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #252a36; -webkit-font-smoothing: antialiased; background-color: #fbfcff; background-image: linear-gradient(90deg, transparent 39px, rgba(220,68,68,.32) 39px, rgba(220,68,68,.32) 40px, transparent 40px), repeating-linear-gradient(180deg, transparent 0, transparent 31px, rgba(47,107,255,.04) 31px, rgba(47,107,255,.04) 32px)">
+
+  <header style="border-bottom: 1px solid rgba(47,107,255,.16); background: #ffffff">
+    <div class="hwrap" style="max-width: 1080px; margin: 0 auto; box-sizing: border-box; padding: 32px clamp(20px, 5vw, 64px) 14px clamp(60px, 6vw, 80px); display: flex; align-items: center; min-height: 72px">
+      <a href="index.html" class="home" style="display: inline-flex; flex-direction: column; gap: 2px; min-height: 44px; justify-content: center"><span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 26px; font-weight: 400; letter-spacing: -0.01em; line-height: 1">Kim Papillon</span><span style="font-size: 12px; color: #55607a">Experiences, Interfaces and Research</span></a>
+    </div>
+  </header>
+
+  <main class="mwrap" style="max-width: 1080px; margin: 0 auto; box-sizing: border-box; padding: 56px clamp(20px, 5vw, 64px) 80px clamp(60px, 6vw, 80px); display: flex; flex-direction: column; gap: 64px">
+
+    <div class="rise" style="display: flex; flex-direction: column; gap: 18px">
+      <nav aria-label="Breadcrumb" class="crumb"><ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 14px; color: #55607a"><li><a href="index.html">Work</a></li><li aria-hidden="true">/</li><li aria-current="page" style="color: #252a36; font-weight: 600">BIOVIA</li></ol></nav>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="padding: 6px 12px; border-radius: 100px; background: #2a5ad6; color: #ffffff; font-size: 11px; font-weight: 600; letter-spacing: 0.04em">UX Research</span><span style="padding: 6px 12px; border-radius: 100px; background: #2a5ad6; color: #ffffff; font-size: 11px; font-weight: 600; letter-spacing: 0.04em">Design</span></div>
+      <h1 style="margin: 0; font-size: clamp(40px, 6vw, 72px); line-height: 0.98; letter-spacing: -0.04em; font-weight: 700">Dassault Systèmes BIOVIA</h1>
+      <p style="margin: 0; font-size: clamp(17px, 1.6vw, 21px); line-height: 1.5; color: #46506a; max-width: 60ch">Rethinking ONE Lab’s batch release workflow for scientists: from a heuristic evaluation to a redesigned and tested experience.</p>
+      <dl style="margin: 12px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); gap: 20px 32px; padding-top: 24px; border-top: 1px solid rgba(47,107,255,.14)">
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <dt style="font-size: 12px; font-weight: 600; color: #55607a">Role</dt>
+          <dd style="margin: 0; font-size: 15px; line-height: 1.5">UX Designer intern, BIOVIA Go To Market</dd>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <dt style="font-size: 12px; font-weight: 600; color: #55607a">Product</dt>
+          <dd style="margin: 0; font-size: 15px; line-height: 1.5">BIOVIA ONE Lab, batch release workflow</dd>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <dt style="font-size: 12px; font-weight: 600; color: #55607a">Year</dt>
+          <dd style="margin: 0; font-size: 15px; line-height: 1.5">2026</dd>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <dt style="font-size: 12px; font-weight: 600; color: #55607a">Methods</dt>
+          <dd style="margin: 0; font-size: 15px; line-height: 1.5">Heuristic evaluation, task flows, journey mapping, usability testing</dd>
+        </div>
+      </dl>
+    </div>
+
+    <figure class="rise" style="animation-delay: .1s; margin: 0; border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #f3f6ff">
+      <button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/biovia-scientists.webp" alt="Scientists reviewing data on a lab screen" style="display: block; width: 100%; aspect-ratio: 16 / 8; object-fit: cover"></button>
+    </figure>
+
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">01</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">Before and after</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<span style="align-self: flex-start; padding: 5px 12px; border-radius: 100px; background: #eef0f4; color: #46506a; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase">Before</span>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/biovia-before.webp" alt="Original ONE Lab study design screen" style="display: block; width: 100%; aspect-ratio: 1919 / 862; object-fit: contain"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">The existing study design screen: dense pill-shaped values, long tables and no sense of where you are in the overall workflow.</figcaption></figure>
+<span style="align-self: flex-start; padding: 5px 12px; border-radius: 100px; background: #2a5ad6; color: #ffffff; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase">After</span>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/biovia-after.webp" alt="Redesigned Configure Batch Release screen" style="display: block; width: 100%; aspect-ratio: 3674 / 2072; object-fit: contain"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">The redesign: a workflow tracker on the left (Design, Study Approval, Execution, Study Completed), selected candidates as cards, and each part of the study in its own clear, editable section.</figcaption></figure>
+      </div>
+    </section>
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">02</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">Heuristic evaluation</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <p style="margin: 0; font-size: 17px; line-height: 1.65">The project started with a heuristic evaluation of the existing ONE Lab batch release screens, documenting usability issues screen by screen against established heuristic principles.</p>
+        <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/biovia-heuristic-board.webp" alt="Heuristic evaluation board with annotated screens of the batch release flow" style="display: block; width: 100%; height: auto"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">The heuristic evaluation board: each screen of the existing flow, annotated with color-coded usability issues and overall notes.</figcaption></figure>
+      </div>
+    </section>
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">03</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">Redesign based on heuristic principles</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <p style="margin: 0; font-size: 17px; line-height: 1.65">Using the evaluation and the flows, I redesigned the batch release experience around visibility of system status, recognition over recall and consistent patterns. The workflow tracker always shows where scientists are, side panels keep details close without losing context, and work is grouped the way it is actually done.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 24px 20px"><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><video src="assets/biovia-lot-panel.mp4" autoplay muted loop playsinline style="display: block; width: 100%; height: auto"></video></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">Selecting a lot opens a side panel with its details, so scientists can compare without leaving the page.</figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><video src="assets/biovia-spec-panel.mp4" autoplay muted loop playsinline style="display: block; width: 100%; height: auto"></video></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">Selecting a specification shows its details in the same side panel pattern.</figcaption></figure></div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><video src="assets/biovia-kanban.mp4" autoplay muted loop playsinline style="display: block; width: 100%; height: auto"></video></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">Kanban cards group work by status, making progress easy to scan.</figcaption></figure>
+        <h3 style="margin: 12px 0 0; font-size: 19px; letter-spacing: -0.01em">Full prototype walkthrough</h3>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><video src="assets/biovia-walkthrough.mp4" controls muted playsinline preload="metadata" style="display: block; width: 100%; height: auto"></video></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">A walkthrough of the redesigned flow, from the home dashboard and selecting a release starting point, through study design and approval, to executing the task plan.</figcaption></figure>
+      </div>
+    </section>
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">04</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">Usability study</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <p style="margin: 0; font-size: 17px; line-height: 1.65">The redesigned prototype was then tested in a usability study. These attention heatmaps are a snippet of the results, showing where participants looked while completing tasks.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 24px 20px"><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/biovia-heatmap-design.webp" alt="Attention heatmap on the study design screen" style="display: block; width: 100%; aspect-ratio: 1049 / 831; object-fit: contain"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">Study design: attention concentrated on the owner and target columns and on the sign-off controls.</figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/biovia-heatmap-execute.webp" alt="Attention heatmap on the task execution screen" style="display: block; width: 100%; aspect-ratio: 1049 / 831; object-fit: contain"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">Task execution: attention concentrated on task status and the action column.</figcaption></figure></div>
+      </div>
+    </section>
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">05</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">Presented at BIOVIA Live 2026</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <p style="margin: 0; font-size: 17px; line-height: 1.65">I presented this framework and the new ONE Lab batch release experience at <strong>BIOVIA Live 2026</strong>, alongside presales and the industry portfolio manager, sharing our early design direction with the BIOVIA community.</p>
+        <figure style="margin: 0; padding: 28px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 16px">
+          <blockquote style="margin: 0; font-size: 20px; line-height: 1.5">“This initiative marks the beginning of an exciting journey to rethink the laboratory experience, exploring new ways to support scientists in their daily workflows through a more intuitive, coherent, and user-centered experience.”</blockquote>
+          <figcaption style="font-size: 14px; color: #55607a"><strong style="color: #252a36">Anne-Sophie Valin</strong>, UX Design Manager, BIOVIA</figcaption>
+        </figure>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px; max-width: 520px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/biovia-live-post.webp" alt="Internal post announcing the BIOVIA Live 2026 presentation" style="display: block; width: 100%; height: auto"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">The internal announcement of the presentation.</figcaption></figure>
+      </div>
+    </section>
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">06</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">What’s next</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px">
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">Next</span>
+            <h3 style="margin: 0; font-size: 17px">A design system</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Creating a design system so the new patterns stay consistent as the experience grows across ONE Lab.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">Phase 2</span>
+            <h3 style="margin: 0; font-size: 17px">Stability study research</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Extending the research to stability study interfaces, applying the same evaluation, mapping and testing approach.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer style="display: flex; flex-direction: column; gap: 16px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.16)">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px">
+        <h2 style="margin: 0; font-size: 22px; letter-spacing: -0.02em">More case studies</h2>
+        <div style="display: flex; gap: 10px">
+          <button type="button" class="carbtn" data-car="prev" aria-label="Previous case studies" style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(47,107,255,.2); background: #ffffff; color: #2a5ad6; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg></button>
+          <button type="button" class="carbtn" data-car="next" aria-label="Next case studies" style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(47,107,255,.2); background: #ffffff; color: #2a5ad6; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></button>
+        </div>
+      </div>
+      <div style="overflow: hidden">
+        <div class="cartrack" style="display: flex; gap: 16px">
+          
+            <a href="hope-and-cope.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #d9e6f5"><img class="cimg" src="assets/hopecope-hero.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">Hope &amp; Cope</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">Helping patients and caregivers find cancer support at the right time.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+            <a href="manela.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #f3f6ff"><img class="cimg" src="assets/manela-onboarding.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">Manela</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">A SaaS platform for parental leave planning.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+            <a href="university-of-montreal.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #f3f6ff"><img class="cimg" src="assets/udem-campus.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">University of Montreal</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">Making the new French admission requirements easier to understand.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+            <a href="planmonark.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #ffffff"><img class="cimg" src="assets/planmonark-menus.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">PlanMonark</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">A usability evaluation (n=16) of a survey creation platform.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+            <a href="movingwaldo.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #f3f6ff"><img class="cimg" src="assets/movingwaldo-screens.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">MovingWaldo</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">Canada-wide movers booking platform.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <div id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Enlarged image" style="position: fixed; inset: 0; z-index: 50; overflow-y: auto; background: rgba(20,24,34,.86); box-sizing: border-box; padding: 64px 20px 40px; display: flex; justify-content: center; align-items: flex-start; cursor: zoom-out">
+    <button type="button" data-close-btn aria-label="Close enlarged image" style="position: fixed; top: 16px; right: 16px; width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(255,255,255,.3); background: rgba(255,255,255,.12); color: #ffffff; font-size: 22px; line-height: 1; cursor: pointer">×</button>
+    <img id="lightbox-img" src="" alt="" style="display: block; width: auto; max-width: min(1400px, 100%); height: auto; margin: auto 0; border-radius: 10px; background: #ffffff; box-shadow: 0 30px 80px -20px rgba(0,0,0,.6); cursor: default">
+  </div>
+
+</div>
+<script>
+(function () {
+  var lb = document.getElementById('lightbox'), lbImg = document.getElementById('lightbox-img'), last = null;
+  function close() { lb.hidden = true; lbImg.src = ''; document.body.style.overflow = ''; if (last) last.focus(); }
+  document.querySelectorAll('[data-zoom]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var img = b.querySelector('img'); if (!img) return;
+      last = b; lbImg.src = img.currentSrc || img.src; lbImg.alt = img.alt || '';
+      lb.hidden = false; document.body.style.overflow = 'hidden'; lb.querySelector('[data-close-btn]').focus();
+    });
+  });
+  lb.addEventListener('click', function (e) { if (e.target !== lbImg) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !lb.hidden) close(); });
+  var track = document.querySelector('.cartrack');
+  var next = document.querySelector('[data-car="next"]'), prev = document.querySelector('[data-car="prev"]');
+  if (track && next && prev) {
+    next.addEventListener('click', function () { track.appendChild(track.firstElementChild); });
+    prev.addEventListener('click', function () { track.insertBefore(track.lastElementChild, track.firstElementChild); });
+  }
+})();
+</script>
+</body>
+</html>

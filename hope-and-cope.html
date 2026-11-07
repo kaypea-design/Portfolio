@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hope & Cope case study | Kim Papillon</title>
+<meta name="description" content="Kim Papillon, product designer and UX researcher in Montréal: experiences, interfaces and research.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232a5ad6'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='white' text-anchor='middle'%3EKP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;display=swap">
+<style>
+html,body{max-width:100%;overflow-x:clip}
+img,video{max-width:100%}
+body{margin:0;background:#fbfcff}
+a{color:#2a5ad6}a:hover{color:#1f4cc0}
+.zoomable{transition:opacity .25s}
+.zoomable:hover{opacity:.9}
+.zoomable:focus-visible{outline:2px solid #2a5ad6;outline-offset:3px}
+.crumb a{color:#55607a;text-decoration:none}.crumb a:hover{color:#2a5ad6;text-decoration:underline}
+.home{color:#252a36;text-decoration:none}.home:hover{color:#2a5ad6}
+.nextcard{transition:transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s, border-color .3s}
+.nextcard:hover{transform:translateY(-4px);border-color:rgba(47,107,255,.35);box-shadow:0 18px 40px -28px rgba(30,35,50,.3)}
+.nextcard .nimg{transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
+.nextcard:hover .nimg{transform:scale(1.03)}
+.carbtn{transition:background .25s, transform .3s cubic-bezier(.16,1,.3,1)}
+.carbtn:hover{background:#e6eeff;transform:scale(1.06)}
+.cartrack{animation:slidein .5s cubic-bezier(.16,1,.3,1)}
+@keyframes slidein{from{opacity:.4;transform:translateX(24px)}to{opacity:1;transform:none}}
+.carcard{transition:transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s, border-color .3s}
+.carcard:hover{transform:translateY(-4px);border-color:rgba(47,107,255,.35);box-shadow:0 18px 40px -28px rgba(30,35,50,.3)}
+.carcard .cimg{transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
+.carcard:hover .cimg{transform:scale(1.03)}
+@media (max-width: 700px){.carcard{flex-basis:100% !important}}
+.back{transition:color .25s}
+.back .arr{display:inline-block;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.back:hover .arr{transform:translateX(-4px)}
+.card{transition:transform .45s cubic-bezier(.16,1,.3,1), box-shadow .45s}
+.card:hover{transform:translateY(-3px);box-shadow:0 16px 32px -24px rgba(30,35,50,.25)}
+.nextcard .arr{display:inline-block;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.nextcard:hover .arr{transform:translateX(6px)}
+@media (max-width: 700px){
+  .paper{background-image:repeating-linear-gradient(180deg, transparent 0, transparent 31px, rgba(47,107,255,.04) 31px, rgba(47,107,255,.04) 32px) !important}
+  .hwrap,.mwrap{padding-left:16px !important;padding-right:16px !important}
+  .mwrap{gap:48px !important;padding-top:32px !important}
+  .mwrap section{padding-top:24px !important}
+  .card{padding:18px !important}
+  .mwrap figure img,.cimg{aspect-ratio:auto !important;height:auto !important;object-fit:contain !important;transform:none !important}
+}
+.rise{animation:rise .9s cubic-bezier(.16,1,.3,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.rise{animation:none}.card,.back .arr,.nextcard .arr{transition:none}.card:hover{transform:none}}
+</style>
+
+<style>
+#lightbox{display:flex}
+#lightbox[hidden]{display:none !important}
+</style>
+</head>
+<body>
+<div class="paper" style="min-height: 100vh; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #252a36; -webkit-font-smoothing: antialiased; background-color: #fbfcff; background-image: linear-gradient(90deg, transparent 39px, rgba(220,68,68,.32) 39px, rgba(220,68,68,.32) 40px, transparent 40px), repeating-linear-gradient(180deg, transparent 0, transparent 31px, rgba(47,107,255,.04) 31px, rgba(47,107,255,.04) 32px)">
+
+  <header style="border-bottom: 1px solid rgba(47,107,255,.16); background: #ffffff">
+    <div class="hwrap" style="max-width: 1080px; margin: 0 auto; box-sizing: border-box; padding: 32px clamp(20px, 5vw, 64px) 14px clamp(60px, 6vw, 80px); display: flex; align-items: center; min-height: 72px">
+      <a href="index.html" class="home" style="display: inline-flex; flex-direction: column; gap: 2px; min-height: 44px; justify-content: center"><span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 26px; font-weight: 400; letter-spacing: -0.01em; line-height: 1">Kim Papillon</span><span style="font-size: 12px; color: #55607a">Experiences, Interfaces and Research</span></a>
+    </div>
+  </header>
+
+  <main class="mwrap" style="max-width: 1080px; margin: 0 auto; box-sizing: border-box; padding: 56px clamp(20px, 5vw, 64px) 80px clamp(60px, 6vw, 80px); display: flex; flex-direction: column; gap: 64px">
+
+    <div class="rise" style="display: flex; flex-direction: column; gap: 18px">
+      <nav aria-label="Breadcrumb" class="crumb"><ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 14px; color: #55607a"><li><a href="index.html">Work</a></li><li aria-hidden="true">/</li><li aria-current="page" style="color: #252a36; font-weight: 600">Hope &amp; Cope</li></ol></nav>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="padding: 6px 12px; border-radius: 100px; background: #2a5ad6; color: #ffffff; font-size: 11px; font-weight: 600; letter-spacing: 0.04em">UX Research</span><span style="padding: 6px 12px; border-radius: 100px; background: #2a5ad6; color: #ffffff; font-size: 11px; font-weight: 600; letter-spacing: 0.04em">Design</span></div>
+      <h1 style="margin: 0; font-size: clamp(40px, 6vw, 72px); line-height: 0.98; letter-spacing: -0.04em; font-weight: 700">Hope &amp; Cope Cancer Wellness Center</h1>
+      <p style="margin: 0; font-size: clamp(17px, 1.6vw, 21px); line-height: 1.5; color: #46506a; max-width: 60ch">Research to help patients and caregivers discover Hope &amp; Cope’s free cancer support at the right time, and feel ready to use it.</p>
+      <dl style="margin: 12px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); gap: 20px 32px; padding-top: 24px; border-top: 1px solid rgba(47,107,255,.14)">
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <dt style="font-size: 12px; font-weight: 600; color: #55607a">Role</dt>
+          <dd style="margin: 0; font-size: 15px; line-height: 1.5">UX researcher and co-presenter of research and insights</dd>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <dt style="font-size: 12px; font-weight: 600; color: #55607a">Team</dt>
+          <dd style="margin: 0; font-size: 15px; line-height: 1.5">10-person HEC Montréal research team</dd>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <dt style="font-size: 12px; font-weight: 600; color: #55607a">Partner</dt>
+          <dd style="margin: 0; font-size: 15px; line-height: 1.5">Hope &amp; Cope, Jewish General Hospital</dd>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <dt style="font-size: 12px; font-weight: 600; color: #55607a">Methods</dt>
+          <dd style="margin: 0; font-size: 15px; line-height: 1.5">Literature review, benchmarking, site observation, interviews</dd>
+        </div>
+      </dl>
+    </div>
+
+    <figure class="rise" style="animation-delay: .1s; margin: 0; border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #f3f6ff">
+      <button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/hopecope-hero.webp" alt="Hope &amp; Cope website hero: supporting you through your cancer journey" style="display: block; width: 100%; aspect-ratio: 16 / 8; object-fit: contain; background: #d9e6f5"></button>
+    </figure>
+
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">01</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">Context</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <p style="margin: 0; font-size: 17px; line-height: 1.65">Hope &amp; Cope offers free support to patients and caregivers during their cancer journey, with services and activities that help people affected by cancer improve their quality of life during a difficult time.</p>
+        <p style="margin: 0; padding: 20px 24px; background: #eef3ff; border-radius: 14px; font-size: 18px; line-height: 1.55">Patients and caregivers may not discover Hope &amp; Cope at the right time, and even when they do, they may not feel motivated to engage with its services.</p>
+        <h3 style="margin: 12px 0 0; font-size: 19px; letter-spacing: -0.01em">Mandate</h3>
+        <p style="margin: 0; font-size: 17px; line-height: 1.65">Conduct user research that identifies the most promising opportunities and delivers multidimensional recommendations, so that everyone who could benefit from Hope &amp; Cope can find and access it when it is most useful to them.</p>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/hopecope-user-needs.webp" alt="Slide: what our users need, jobs, pains and gains" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">What patients and caregivers need: their jobs, pains and gains, as a starting point for the value proposition.</figcaption></figure>
+      </div>
+    </section>
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">02</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">Hypotheses</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px">
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">H1a</span>
+            <h3 style="margin: 0; font-size: 17px">Personal referral speeds up outreach</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">When staff, a nurse or a volunteer tells someone about support, they reach out faster than people who only see posters or online information.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">H1b</span>
+            <h3 style="margin: 0; font-size: 17px">Caregivers find support by accident</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Caregivers usually learn about support while looking for medical information for the patient, not support for themselves.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">H2a</span>
+            <h3 style="margin: 0; font-size: 17px">Timing beats confusion</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">The wait between hearing about support and accessing it comes down to timing and readiness, not confusion or access barriers.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">H2b</span>
+            <h3 style="margin: 0; font-size: 17px">Personal reasons, not practical ones</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">People who know support exists but do not use it have personal reasons, like not wanting to identify as a cancer patient or believing others need it more.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">03</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">Research plan</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 16px">
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">Secondary</span>
+            <h3 style="margin: 0; font-size: 17px">Literature review</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">How patients and caregivers seek, receive and process information, and when they are cognitively ready to take it in.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">Secondary</span>
+            <h3 style="margin: 0; font-size: 17px">Competitive benchmarking</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Montréal cancer-specific peers, including West Island Cancer Wellness Centre and Cedars CanSupport.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">Primary</span>
+            <h3 style="margin: 0; font-size: 17px">Site visit and observation</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">JGH offices compared with the Wellness Centre: navigation, atmosphere, information and who it is pitched at.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">Primary</span>
+            <h3 style="margin: 0; font-size: 17px">Exploratory interviews</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">7 participants: patients, caregivers and a physician, about how people discover, engage with or step away from support.</p>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 24px 20px"><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/hopecope-methods.webp" alt="Slide: detailed methods and progress" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">Primary and secondary research methods and their progress.</figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/hopecope-benchmark.webp" alt="Slide: online benchmarking of Montréal cancer centres" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">Benchmarking: what each centre’s website makes clear first, and key improvement areas for Hope &amp; Cope.</figcaption></figure></div>
+      </div>
+    </section>
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">04</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">Key findings</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <p style="margin: 0; font-size: 17px; line-height: 1.65">Secondary research showed that <strong>information readiness changes throughout the cancer journey</strong>. At diagnosis many patients are in shock and “shut down”, later move to “taking it on”, then to “taking control”. Caregivers often become the information seekers when patients are overwhelmed.</p>
+        <h3 style="margin: 12px 0 0; font-size: 19px; letter-spacing: -0.01em">Interview insights</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 16px">
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">1</span>
+            <h3 style="margin: 0; font-size: 17px">Proactive beats self-discovery</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Pamphlets are easily overlooked. Patients prefer to be offered support rather than having to find it.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">2</span>
+            <h3 style="margin: 0; font-size: 17px">The care team is trusted most</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Support is far more likely to be adopted when introduced by the medical team than found online.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">3</span>
+            <h3 style="margin: 0; font-size: 17px">Caregivers put themselves last</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Caregivers consistently deprioritize their own emotional and physical health to focus on the patient.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">4</span>
+            <h3 style="margin: 0; font-size: 17px">Diagnosis is overwhelming</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Support is most needed at diagnosis, yet patients are too shocked to process complex service details.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">5</span>
+            <h3 style="margin: 0; font-size: 17px">Peers help some, burden others</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Peer groups normalize the experience for many, but some patients prefer strict one-to-one care.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">6</span>
+            <h3 style="margin: 0; font-size: 17px">Generic feels impersonal</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Broad offerings make people feel like “just a number”, leading to disengagement.</p>
+          </div>
+        </div>
+        <blockquote style="margin: 0; padding: 4px 0 4px 18px; border-left: 2px solid rgba(47,107,255,.35); font-size: 16px; line-height: 1.6; color: #46506a">“If they have to initiate contact on their own, they often hesitate.” <span style="font-size: 13px; color: #55607a">Physician, P02</span></blockquote>
+        <blockquote style="margin: 0; padding: 4px 0 4px 18px; border-left: 2px solid rgba(47,107,255,.35); font-size: 16px; line-height: 1.6; color: #46506a">“I was overwhelmed and worried almost all the time, but I didn’t really stop to think about my own feelings.” <span style="font-size: 13px; color: #55607a">Caregiver, P03</span></blockquote>
+        <blockquote style="margin: 0; padding: 4px 0 4px 18px; border-left: 2px solid rgba(47,107,255,.35); font-size: 16px; line-height: 1.6; color: #46506a">“I felt like I was just a number among many others, I stayed pretty cold toward all the services being offered.” <span style="font-size: 13px; color: #55607a">Patient, P07</span></blockquote>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 24px 20px"><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/hopecope-insight.webp" alt="Slide: insight on proactive versus passive self-discovery" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">Each insight paired interview evidence with secondary research.</figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/hopecope-triangulated.webp" alt="Slide: triangulated insights" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">Triangulated insights: pathways to support, caregiver needs, support without pressure, and support versus burden.</figcaption></figure></div>
+      </div>
+    </section>
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">05</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">Recommendations</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px">
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">1</span>
+            <h3 style="margin: 0; font-size: 17px">Discover through the care team</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Make it easier to discover Hope &amp; Cope through the existing medical care team, leveraging that trust.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">2</span>
+            <h3 style="margin: 0; font-size: 17px">Reach out to caregivers</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Proactively let caregivers know support is available for them too, not only for the patient.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">3</span>
+            <h3 style="margin: 0; font-size: 17px">Stay present, without pressure</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Keep emotional support visible at different points after diagnosis, so people can engage when they feel ready.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">4</span>
+            <h3 style="margin: 0; font-size: 17px">Flexible peer connection</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Offer different ways and levels of involvement to connect with peers, matched to each person’s readiness.</p>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 24px 20px"><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/hopecope-recommendations.webp" alt="Slide: preliminary recommendations" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">Preliminary recommendations presented to the Hope &amp; Cope team.</figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/hopecope-hmw.webp" alt="Slide: how might we questions" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">“How might we” questions to guide the next design phase.</figcaption></figure></div>
+        <h3 style="margin: 12px 0 0; font-size: 19px; letter-spacing: -0.01em">Next steps</h3>
+        <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 17px; line-height: 1.6"><li>Interview Hope &amp; Cope patients, caregivers and volunteers.</li><li>Survey to identify barriers, needs and opportunities.</li><li>Map key user journeys and service touchpoints, then develop personas.</li><li>Ideate and design potential solutions.</li></ul>
+        <figure style="margin: 0; padding: 28px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 16px">
+          <blockquote style="margin: 0; font-size: 20px; line-height: 1.5">“I was impressed by the clarity of your hypotheses, the background research and framework for your questions and your potential action plan.”</blockquote>
+          <figcaption style="font-size: 14px; color: #55607a"><strong style="color: #252a36">Suzanne O’Brien</strong>, Interim Co-Executive Director, Hope &amp; Cope</figcaption>
+        </figure>
+      </div>
+    </section>
+    <footer style="display: flex; flex-direction: column; gap: 16px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.16)">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px">
+        <h2 style="margin: 0; font-size: 22px; letter-spacing: -0.02em">More case studies</h2>
+        <div style="display: flex; gap: 10px">
+          <button type="button" class="carbtn" data-car="prev" aria-label="Previous case studies" style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(47,107,255,.2); background: #ffffff; color: #2a5ad6; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg></button>
+          <button type="button" class="carbtn" data-car="next" aria-label="Next case studies" style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(47,107,255,.2); background: #ffffff; color: #2a5ad6; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></button>
+        </div>
+      </div>
+      <div style="overflow: hidden">
+        <div class="cartrack" style="display: flex; gap: 16px">
+          
+            <a href="manela.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #f3f6ff"><img class="cimg" src="assets/manela-onboarding.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">Manela</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">A SaaS platform for parental leave planning.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+            <a href="university-of-montreal.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #f3f6ff"><img class="cimg" src="assets/udem-campus.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">University of Montreal</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">Making the new French admission requirements easier to understand.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+            <a href="planmonark.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #ffffff"><img class="cimg" src="assets/planmonark-menus.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">PlanMonark</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">A usability evaluation (n=16) of a survey creation platform.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+            <a href="movingwaldo.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #f3f6ff"><img class="cimg" src="assets/movingwaldo-screens.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">MovingWaldo</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">Canada-wide movers booking platform.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+            <a href="biovia.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #f3f6ff"><img class="cimg" src="assets/biovia-scientists.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">Dassault Systèmes BIOVIA</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">Rethinking ONE Lab’s batch release workflow for scientists.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <div id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Enlarged image" style="position: fixed; inset: 0; z-index: 50; overflow-y: auto; background: rgba(20,24,34,.86); box-sizing: border-box; padding: 64px 20px 40px; display: flex; justify-content: center; align-items: flex-start; cursor: zoom-out">
+    <button type="button" data-close-btn aria-label="Close enlarged image" style="position: fixed; top: 16px; right: 16px; width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(255,255,255,.3); background: rgba(255,255,255,.12); color: #ffffff; font-size: 22px; line-height: 1; cursor: pointer">×</button>
+    <img id="lightbox-img" src="" alt="" style="display: block; width: auto; max-width: min(1400px, 100%); height: auto; margin: auto 0; border-radius: 10px; background: #ffffff; box-shadow: 0 30px 80px -20px rgba(0,0,0,.6); cursor: default">
+  </div>
+
+</div>
+<script>
+(function () {
+  var lb = document.getElementById('lightbox'), lbImg = document.getElementById('lightbox-img'), last = null;
+  function close() { lb.hidden = true; lbImg.src = ''; document.body.style.overflow = ''; if (last) last.focus(); }
+  document.querySelectorAll('[data-zoom]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var img = b.querySelector('img'); if (!img) return;
+      last = b; lbImg.src = img.currentSrc || img.src; lbImg.alt = img.alt || '';
+      lb.hidden = false; document.body.style.overflow = 'hidden'; lb.querySelector('[data-close-btn]').focus();
+    });
+  });
+  lb.addEventListener('click', function (e) { if (e.target !== lbImg) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !lb.hidden) close(); });
+  var track = document.querySelector('.cartrack');
+  var next = document.querySelector('[data-car="next"]'), prev = document.querySelector('[data-car="prev"]');
+  if (track && next && prev) {
+    next.addEventListener('click', function () { track.appendChild(track.firstElementChild); });
+    prev.addEventListener('click', function () { track.insertBefore(track.lastElementChild, track.firstElementChild); });
+  }
+})();
+</script>
+</body>
+</html>

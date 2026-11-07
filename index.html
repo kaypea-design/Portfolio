@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kim Papillon, Experiences, Interfaces and Research</title>
+<meta name="description" content="Kim Papillon, product designer and UX researcher in Montréal: experiences, interfaces and research.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232a5ad6'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='white' text-anchor='middle'%3EKP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter+Tight:wght@300&amp;display=swap">
+<style>
+html,body{max-width:100%;overflow-x:clip}
+img,video{max-width:100%}
+body{margin:0; background-color: #FBFCFF99; }
+a{color:#2a5ad6}a:hover{color:#1d4fd6}
+html{scroll-behavior:smooth}
+@media (min-width: 840px){.side{position:sticky;top:0;height:100vh;overflow-y:auto}}
+
+.project h2{color:#1f2430;font-family:'Helvetica Neue','Inter Tight',Helvetica,Arial,sans-serif;font-weight:300 !important;letter-spacing:-0.035em !important}
+.sidename{display:flex;flex-direction:column;gap:6px;overflow:hidden;max-height:0;opacity:0;transform:translateY(-8px);margin-bottom:-40px;transition:max-height .5s cubic-bezier(.16,1,.3,1), opacity .4s, transform .5s cubic-bezier(.16,1,.3,1), margin-bottom .5s cubic-bezier(.16,1,.3,1)}
+.sidename.is-shown{max-height:120px;opacity:1;transform:none;margin-bottom:0}
+@media (max-width: 839px){.sidename{margin-bottom:-8px}.sidename.is-shown{margin-bottom:0}.masthead{padding:40px 16px 28px !important}}
+.nav-link{display:flex;align-items:baseline;gap:12px;min-height:40px;box-sizing:border-box;padding:10px 0 10px 14px;border-left:2px solid transparent;text-decoration:none;color:#46506a;font-size:14px;transition:color .25s, border-color .25s, padding-left .35s cubic-bezier(.16,1,.3,1)}
+.nav-link:hover{color:#252a36;padding-left:19px}
+.nav-link.is-active{color:#2a5ad6;border-left-color:#4a7dff;padding-left:22px;font-weight:600}
+
+.project .frame{transition:border-color .4s, box-shadow .6s cubic-bezier(.16,1,.3,1)}
+.project:hover .frame{border-color:rgba(47,107,255,.3);box-shadow:0 18px 40px -28px rgba(30,35,50,.18)}
+.project .shot{transition:transform 1.4s cubic-bezier(.16,1,.3,1);transform:scale(1.04)}
+.project:hover .shot{transform:scale(1)}
+.cell{transition:transform .45s cubic-bezier(.16,1,.3,1), box-shadow .45s, border-color .3s}
+.cell:hover{transform:translateY(-4px);border-color:rgba(47,107,255,.6);box-shadow:0 16px 34px -18px rgba(16,16,16,.25)}
+.go{transition:background .3s, transform .45s cubic-bezier(.16,1,.3,1)}
+.go:hover{background:#d6e3ff;color:#1f4cc0;transform:translateY(-4px)}
+.soon{transition:opacity .4s}
+.project:hover .soon{opacity:.92}
+.titlelink{color:inherit;text-decoration:none;background-image:linear-gradient(currentColor,currentColor);background-size:0% 2px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .45s cubic-bezier(.16,1,.3,1), color .25s}
+.titlelink:hover{background-size:100% 2px}
+.track{transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.nextbtn{transition:transform .35s cubic-bezier(.16,1,.3,1), background .25s}
+.nextbtn:hover{transform:scale(1.08);background:#e6eeff}
+.case-link:hover{color:#1f4cc0;text-decoration-thickness:2px}
+.case-link .arr{display:inline-block;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.case-link:hover .arr{transform:translate(3px,-3px)}
+.go .arr{display:inline-block;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.go:hover .arr{transform:translate(3px,-3px)}
+
+.q-xl{grid-column:span 2;grid-row:span 2}
+.q-wide{grid-column:span 2}
+@media (max-width: 1100px){.bento-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}.q-xl{grid-row:auto}}
+@media (max-width: 640px){.bento-grid{grid-template-columns:minmax(0,1fr) !important}.q-xl,.q-wide{grid-column:auto}}
+.rise{animation:rise .9s cubic-bezier(.16,1,.3,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.pulse{animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(47,107,255,.5)}50%{box-shadow:0 0 0 6px rgba(47,107,255,0)}}
+
+@media (max-width: 839px){
+  .side{position:sticky;top:0;z-index:20;flex:1 1 100% !important;padding:12px 16px 0 !important;gap:8px !important;background:rgba(246,249,255,.97) !important;border-right:0 !important;border-bottom:1px solid rgba(47,107,255,.15) !important;box-shadow:none !important}
+  .side .edu{display:none !important}
+  .navlist{flex-direction:row !important;flex-wrap:nowrap;overflow-x:auto;gap:2px !important;margin:0 !important;padding:0 !important;max-width:100%;scrollbar-width:none}
+  .navlist::-webkit-scrollbar{display:none}
+  .navlist li{flex:none}
+  .nav-link{border-left:0 !important;border-bottom:2px solid transparent;padding:10px 8px !important;font-size:13px !important;white-space:nowrap}
+  .nav-link:hover{padding-left:8px !important}
+  .nav-link.is-active{border-bottom-color:#4a7dff}
+}
+@media (max-width: 700px){
+  .paper{background-image:repeating-linear-gradient(180deg, transparent 0, transparent 31px, rgba(47,107,255,.04) 31px, rgba(47,107,255,.04) 32px) !important}
+  .paper > section{padding:40px 16px !important}
+  .paper > footer{padding-left:16px !important;padding-right:16px !important}
+  .track{display:block !important;width:100% !important;transform:none !important}
+  .pimg,.pdet{width:100% !important}
+  .pdet{padding:24px 20px !important;border-top:1px solid rgba(47,107,255,.12)}
+  .shot{aspect-ratio:4 / 5 !important;width:100% !important;height:auto !important;object-fit:cover !important;transform:none !important}
+  #biovia .shot{object-position:62% 50% !important}
+  #hopecope .shot{object-position:74% 50% !important}
+  #manela .shot{object-position:28% 50% !important}
+  #udem .shot{object-position:20% 50% !important}
+  #planmonark .shot{object-position:42% 78% !important}
+  #movingwaldo .shot{object-position:32% 62% !important}
+  .nextbtn{display:none !important}
+  .pimg > div[style*="bottom: 18px"]{right:18px !important}
+  .bento-grid{gap:12px !important}
+}
+@media (prefers-reduced-motion: reduce){
+  .rise,.pulse{animation:none}
+  .nav-link,.frame,.shot,.cell,.go,.go .arr,.track,.nextbtn{transition:none}
+  .cell:hover,.go:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; min-height: 100vh; max-width: 100%; overflow-x: clip; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #252a36; background: #fbfcff; -webkit-font-smoothing: antialiased">
+
+  <!-- SIDEBAR -->
+  <nav aria-label="Main" class="side" style="flex: 1 1 240px; max-width: 100%; box-sizing: border-box; padding: 36px 28px; display: flex; flex-direction: column; gap: 40px; background-color: #f6f9ff; background-image: repeating-linear-gradient(180deg, transparent 0, transparent 31px, rgba(47,107,255,.045) 31px, rgba(47,107,255,.045) 32px); border-right: 1px solid rgba(47,107,255,.15)">
+    <div class="sidename" id="sidename" aria-hidden="true">
+      <a href="#top" tabindex="-1" style="text-decoration: none; color: #252a36; font-family: 'Instrument Serif', Georgia, serif; font-size: 30px; font-weight: 400; letter-spacing: -0.01em; line-height: 1.05">Kim Papillon</a>
+      <span style="font-size: 13px; line-height: 1.4; color: #55607a">Experiences, Interfaces and Research</span>
+    </div>
+
+    <ul class="navlist" style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px">
+      
+        <li>
+          <a href="#biovia" class="nav-link is-active" data-nav="biovia"><span style="font-size: 11px; color: #8a93a8">01</span>BIOVIA</a>
+        </li>
+      
+        <li>
+          <a href="#hopecope" class="nav-link " data-nav="hopecope"><span style="font-size: 11px; color: #8a93a8">02</span>Hope & Cope</a>
+        </li>
+      
+        <li>
+          <a href="#manela" class="nav-link " data-nav="manela"><span style="font-size: 11px; color: #8a93a8">03</span>Manela</a>
+        </li>
+      
+        <li>
+          <a href="#udem" class="nav-link " data-nav="udem"><span style="font-size: 11px; color: #8a93a8">04</span>University of Montreal</a>
+        </li>
+      
+        <li>
+          <a href="#planmonark" class="nav-link " data-nav="planmonark"><span style="font-size: 11px; color: #8a93a8">05</span>PlanMonark</a>
+        </li>
+      
+        <li>
+          <a href="#movingwaldo" class="nav-link " data-nav="movingwaldo"><span style="font-size: 11px; color: #8a93a8">06</span>MovingWaldo</a>
+        </li>
+      
+        <li>
+          <a href="#words" class="nav-link " data-nav="words"><span style="font-size: 11px; color: #8a93a8">07</span>People I’ve worked with</a>
+        </li>
+      
+        <li>
+          <a href="#contact" class="nav-link " data-nav="contact"><span style="font-size: 11px; color: #8a93a8">08</span>Contact</a>
+        </li>
+      
+    </ul>
+
+    <div class="edu" style="margin-top: auto; display: flex; flex-direction: column; gap: 4px; padding-top: 20px; border-top: 1px solid rgba(47,107,255,.12); font-size: 12px; line-height: 1.5; color: #55607a">
+      <span style="color: #252a36; font-weight: 600">Education</span>
+      <span>MSc UX Design, HEC Montréal</span>
+      <span>BA Psychology, Concordia</span>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="paper" style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; background-color: #fbfcff; background-image: linear-gradient(90deg, transparent 39px, rgba(220,68,68,.32) 39px, rgba(220,68,68,.32) 40px, transparent 40px), repeating-linear-gradient(180deg, transparent 0, transparent 31px, rgba(47,107,255,.04) 31px, rgba(47,107,255,.04) 32px)">
+
+    <!-- MASTHEAD -->
+    <header id="top" class="rise masthead" style="box-sizing: border-box; padding: 48px clamp(20px, 5vw, 72px) 36px clamp(60px, 6vw, 96px); background: #ffffff; border-bottom: 2px solid #4a7dff">
+      <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 48px">
+        <h1 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(60px, 8vw, 116px); line-height: 0.88; letter-spacing: -0.025em; font-weight: 400; color: #1f2430">Kim Papillon</h1>
+        <div style="display: flex; flex-direction: column; gap: 10px; padding-bottom: 8px; max-width: 340px">
+          <span aria-hidden="true" style="width: 40px; height: 2px; background: #4a7dff; display: block"></span>
+          <p style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.15; color: #46506a">Experiences, Interfaces and Research</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- 01 BIOVIA -->
+    <section id="biovia" class="project rise" style="animation-delay: .08s; box-sizing: border-box; padding: 56px clamp(20px, 5vw, 72px) 56px clamp(60px, 6vw, 96px); border-bottom: 1px solid rgba(47,107,255,.16); display: flex; flex-direction: column; gap: 28px">
+      <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; align-items: flex-end; justify-content: space-between">
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px">
+            <h2 style="margin: 0; font-size: clamp(34px, 4.6vw, 64px); line-height: 0.98; letter-spacing: -0.04em; font-weight: 700"><a href="biovia.html" class="titlelink">Dassault Systèmes BIOVIA</a></h2>
+            <span style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 100px; background: #e6eeff; border: 1px solid rgba(47,107,255,.2); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #2a5ad6"><span class="pulse" aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #4a7dff; display: inline-block"></span>Currently</span>
+          </div>
+        </div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #46506a">Rethinking ONE Lab’s batch release workflow for scientists.</p>
+      </div>
+      <div class="frame" style="position: relative; border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #f3f6ff">
+        <div class="track" data-track="biovia" style="display: flex; width: 200%; transform: translateX(0%)">
+          <div class="pimg" style="width: 50%; flex: none; overflow: hidden; position: relative">
+            <img class="shot" src="assets/biovia-scientists.webp" alt="Scientists reviewing data on a lab screen" style="display: block; width: 100%; aspect-ratio: 16 / 7; object-fit: cover; object-position: center 30%">
+            
+            <div style="position: absolute; top: 18px; left: 18px; z-index: 1; padding: 10px 14px; border-radius: 10px; background: rgba(255,255,255,.92); box-shadow: 0 4px 12px -8px rgba(30,35,50,.3)"><img src="assets/biovia-logo.png" alt="Dassault Systèmes BIOVIA" style="display: block; height: 22px; width: auto"></div>
+            <div style="position: absolute; bottom: 18px; left: 18px; right: 90px; display: flex; flex-wrap: wrap; gap: 8px; z-index: 1"><span style="padding: 6px 12px; border-radius: 100px; background: #2a5ad6; box-shadow: 0 4px 12px -8px rgba(30,35,50,.3); font-size: 11px; font-weight: 600; letter-spacing: 0.04em; color: #ffffff">UX Research</span><span style="padding: 6px 12px; border-radius: 100px; background: #2a5ad6; box-shadow: 0 4px 12px -8px rgba(30,35,50,.3); font-size: 11px; font-weight: 600; letter-spacing: 0.04em; color: #ffffff">Design</span></div>
+          </div>
+          <div class="pdet" style="width: 50%; flex: none; box-sizing: border-box; padding: clamp(24px, 4vw, 48px) 104px clamp(24px, 4vw, 48px) clamp(24px, 4vw, 48px); background-color: #ffffff; background-image: repeating-linear-gradient(180deg, transparent 0, transparent 31px, rgba(47,107,255,.045) 31px, rgba(47,107,255,.045) 32px); display: flex; flex-direction: column; justify-content: center; gap: 24px">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 24px 40px">
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="display: flex; align-items: center; gap: 7px; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #55607a"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 2px; background: #4a7dff; display: inline-block"></span>Scope</span>
+              <p style="margin: 0; font-size: 15px; line-height: 1.6">A heuristic evaluation, task flows and journey mapping of <strong>ONE Lab’s batch release workflow</strong>, used to guide a full redesign.</p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="display: flex; align-items: center; gap: 7px; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #55607a"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 2px; background: #4a7dff; display: inline-block"></span>Solution</span>
+              <p style="margin: 0; font-size: 15px; line-height: 1.6">A redesigned batch release flow with a clear workflow tracker and side panels, tested in a usability study and presented at BIOVIA Live 2026.</p>
+            </div>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; justify-content: space-between">
+              <ul aria-label="Tags" style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px">
+              <li style="font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #46506a; border: 1px solid rgba(47,107,255,.15); background: #ffffff; padding: 5px 10px; border-radius: 100px">UX</li>
+              <li style="font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #46506a; border: 1px solid rgba(47,107,255,.15); background: #ffffff; padding: 5px 10px; border-radius: 100px">Usability testing</li>
+              <li style="font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #46506a; border: 1px solid rgba(47,107,255,.15); background: #ffffff; padding: 5px 10px; border-radius: 100px">Enterprise</li>
+              </ul>
+              <a href="biovia.html" class="case-link" style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: #2a5ad6; font-size: 15px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Open case study <span class="arr" aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="nextbtn" data-toggle="biovia" aria-label="Show scope and solution" aria-expanded="false" style="position: absolute; right: 18px; bottom: 18px; width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(47,107,255,.2); background: rgba(255,255,255,.92); color: #2a5ad6; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 16px -10px rgba(30,35,50,.18); z-index: 2">
+          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(0deg); transition: transform .5s cubic-bezier(.16,1,.3,1)"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- 05 HOPE & COPE -->
+    <section id="hopecope" class="project rise" style="animation-delay: .16s; box-sizing: border-box; padding: 56px clamp(20px, 5vw, 72px) 56px clamp(60px, 6vw, 96px); border-bottom: 1px solid rgba(47,107,255,.16); display: flex; flex-direction: column; gap: 28px">
+      <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; align-items: flex-start; justify-content: space-between; flex-direction: column">
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          
+          <h2 style="margin: 0; font-size: clamp(34px, 4.6vw, 64px); line-height: 0.98; letter-spacing: -0.04em; font-weight: 700"><a href="hope-and-cope.html" class="titlelink">Hope &amp; Cope Cancer Wellness Center</a></h2>
+        </div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #46506a">Helping patients and caregivers discover Hope &amp; Cope’s free cancer support at the right time.</p>
+      </div>
+      <div class="frame" style="position: relative; border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #f3f6ff">
+        <div class="track" data-track="hopecope" style="display: flex; width: 200%; transform: translateX(0%)">
+          <div class="pimg" style="width: 50%; flex: none; overflow: hidden; position: relative">
+            <img class="shot" src="assets/hopecope-hero.webp" alt="Hope &amp; Cope website hero: supporting you through your cancer journey" style="display: block; width: 100%; aspect-ratio: 16 / 7; object-fit: contain; object-position: center; background: #d9e6f5">
+            <div style="position: absolute; bottom: 18px; left: 18px; right: 90px; display: flex; flex-wrap: wrap; gap: 8px; z-index: 1"><span style="padding: 6px 12px; border-radius: 100px; background: #2a5ad6; box-shadow: 0 4px 12px -8px rgba(30,35,50,.3); font-size: 11px; font-weight: 600; letter-spacing: 0.04em; color: #ffffff">UX Research</span><span style="padding: 6px 12px; border-radius: 100px; background: #2a5ad6; box-shadow: 0 4px 12px -8px rgba(30,35,50,.3); font-size: 11px; font-weight: 600; letter-spacing: 0.04em; color: #ffffff">Design</span></div>
+          </div>
+          <div class="pdet" style="width: 50%; flex: none; box-sizing: border-box; padding: clamp(24px, 4vw, 48px) 104px clamp(24px, 4vw, 48px) clamp(24px, 4vw, 48px); background-color: #ffffff; background-image: repeating-linear-gradient(180deg, transparent 0, transparent 31px, rgba(47,107,255,.045) 31px, rgba(47,107,255,.045) 32px); display: flex; flex-direction: column; justify-content: center; gap: 24px">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 24px 40px">
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="display: flex; align-items: center; gap: 7px; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #55607a"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 2px; background: #4a7dff; display: inline-block"></span>Scope</span>
+              <p style="margin: 0; font-size: 15px; line-height: 1.6">A 10-person HEC Montréal research team partnered with Hope &amp; Cope to understand why patients and caregivers miss, or step away from, its free support.</p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="display: flex; align-items: center; gap: 7px; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #55607a"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 2px; background: #4a7dff; display: inline-block"></span>Key insight</span>
+              <p style="margin: 0; font-size: 15px; line-height: 1.6">Support is far more likely to be used when it is <strong>introduced by the medical care team</strong>, at a moment when people feel ready for it.</p>
+            </div>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; justify-content: space-between">
+              <ul aria-label="Tags" style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px">
+              <li style="font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #46506a; border: 1px solid rgba(47,107,255,.15); background: #ffffff; padding: 5px 10px; border-radius: 100px">UX research</li>
+              <li style="font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #46506a; border: 1px solid rgba(47,107,255,.15); background: #ffffff; padding: 5px 10px; border-radius: 100px">Service design</li>
+              <li style="font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #46506a; border: 1px solid rgba(47,107,255,.15); background: #ffffff; padding: 5px 10px; border-radius: 100px">Healthcare</li>
+              </ul>
+              <a href="hope-and-cope.html" class="case-link" style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: #2a5ad6; font-size: 15px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Open case study <span class="arr" aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="nextbtn" data-toggle="hopecope" aria-label="Show scope and solution" aria-expanded="false" style="position: absolute; right: 18px; bottom: 18px; width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(47,107,255,.2); background: rgba(255,255,255,.92); color: #2a5ad6; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 16px -10px rgba(30,35,50,.18); z-index: 2">
+          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(0deg); transition: transform .5s cubic-bezier(.16,1,.3,1)"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- 02 MANELA -->
+    <section id="manela" class="project rise" style="animation-delay: .24s; box-sizing: border-box; padding: 56px clamp(20px, 5vw, 72px) 56px clamp(60px, 6vw, 96px); border-bottom: 1px solid rgba(47,107,255,.16); display: flex; flex-direction: column; gap: 28px">
+      <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; align-items: flex-end; justify-content: space-between">
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          
+          <h2 style="margin: 0; font-size: clamp(34px, 4.6vw, 64px); line-height: 0.98; letter-spacing: -0.04em; font-weight: 700"><a href="manela.html" class="titlelink">Manela Technologies Inc.</a></h2>
+        </div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #46506a">A SaaS platform for parental leave management.</p>
+      </div>
+      <div class="frame" style="position: relative; border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #f3f6ff">
+        <div class="track" data-track="manela" style="display: flex; width: 200%; transform: translateX(0%)">
+          <div class="pimg" style="width: 50%; flex: none; overflow: hidden; position: relative">
+            <img class="shot" src="assets/manela-onboarding.webp" alt="Manela onboarding screen asking which parental leave plan applies" style="display: block; width: 100%; aspect-ratio: 16 / 7; object-fit: cover; object-position: center">
+            <div style="position: absolute; bottom: 18px; left: 18px; right: 90px; display: flex; flex-wrap: wrap; gap: 8px; z-index: 1"><span style="padding: 6px 12px; border-radius: 100px; background: #2a5ad6; box-shadow: 0 4px 12px -8px rgba(30,35,50,.3); font-size: 11px; font-weight: 600; letter-spacing: 0.04em; color: #ffffff">Founding Designer</span></div>
+          </div>
+          <div class="pdet" style="width: 50%; flex: none; box-sizing: border-box; padding: clamp(24px, 4vw, 48px) 104px clamp(24px, 4vw, 48px) clamp(24px, 4vw, 48px); background-color: #ffffff; background-image: repeating-linear-gradient(180deg, transparent 0, transparent 31px, rgba(47,107,255,.045) 31px, rgba(47,107,255,.045) 32px); display: flex; flex-direction: column; justify-content: center; gap: 24px">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 24px 40px">
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="display: flex; align-items: center; gap: 7px; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #55607a"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 2px; background: #4a7dff; display: inline-block"></span>Scope</span>
+              <p style="margin: 0; font-size: 15px; line-height: 1.6">Co-founded a parental leave platform that helps new parents navigate the information-dense period of new parenthood.</p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="display: flex; align-items: center; gap: 7px; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #55607a"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 2px; background: #4a7dff; display: inline-block"></span>Solution</span>
+              <p style="margin: 0; font-size: 15px; line-height: 1.6">A human-centered design approach that consolidates and simplifies government, company and insurance benefits.</p>
+            </div>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; justify-content: space-between">
+              <ul aria-label="Tags" style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px">
+              <li style="font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #46506a; border: 1px solid rgba(47,107,255,.15); background: #ffffff; padding: 5px 10px; border-radius: 100px">SaaS</li>
+              <li style="font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #46506a; border: 1px solid rgba(47,107,255,.15); background: #ffffff; padding: 5px 10px; border-radius: 100px">Founding designer</li>
+              <li style="font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #46506a; border: 1px solid rgba(47,107,255,.15); background: #ffffff; padding: 5px 10px; border-radius: 100px">0 → 1</li>
+              </ul>
+              <a href="manela.html" class="case-link" style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: #2a5ad6; font-size: 15px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Open case study <span class="arr" aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="nextbtn" data-toggle="manela" aria-label="Show scope and solution" aria-expanded="false" style="position: absolute; right: 18px; bottom: 18px; width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(47,107,255,.2); background: rgba(255,255,255,.92); color: #2a5ad6; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 16px -10px rgba(30,35,50,.18); z-index: 2">
+          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(0deg); transition: transform .5s cubic-bezier(.16,1,.3,1)"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- UNIVERSITY OF MONTREAL -->
+    <section id="udem" class="project rise" style="animation-delay: .32s; box-sizing: border-box; padding: 56px clamp(20px, 5vw, 72px) 56px clamp(60px, 6vw, 96px); border-bottom: 1px solid rgba(47,107,255,.16); display: flex; flex-direction: column; gap: 28px">
+      <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; align-items: flex-start; justify-content: space-between; flex-direction: column">
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          
+          <h2 style="margin: 0; font-size: clamp(34px, 4.6vw, 64px); line-height: 0.98; letter-spacing: -0.04em; font-weight: 700"><a href="university-of-montreal.html" class="titlelink">University of Montreal</a></h2>
+        </div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #46506a">UX research to make the new French admission requirements easier to understand.</p>
+      </div>
+      <div class="frame" style="position: relative; border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #f3f6ff">
+        <div class="track" data-track="udem" style="display: flex; width: 200%; transform: translateX(0%)">
+          <div class="pimg" style="width: 50%; flex: none; overflow: hidden; position: relative">
+            <img class="shot" src="assets/udem-campus.webp" alt="Université de Montréal campus buildings against a blue sky" style="display: block; width: 100%; aspect-ratio: 16 / 7; object-fit: cover; object-position: center 35%">
+            <div style="position: absolute; bottom: 18px; left: 18px; right: 90px; display: flex; flex-wrap: wrap; gap: 8px; z-index: 1"><span style="padding: 6px 12px; border-radius: 100px; background: #2a5ad6; box-shadow: 0 4px 12px -8px rgba(30,35,50,.3); font-size: 11px; font-weight: 600; letter-spacing: 0.04em; color: #ffffff">UX Research</span><span style="padding: 6px 12px; border-radius: 100px; background: #2a5ad6; box-shadow: 0 4px 12px -8px rgba(30,35,50,.3); font-size: 11px; font-weight: 600; letter-spacing: 0.04em; color: #ffffff">Design</span></div>
+          </div>
+          <div class="pdet" style="width: 50%; flex: none; box-sizing: border-box; padding: clamp(24px, 4vw, 48px) 104px clamp(24px, 4vw, 48px) clamp(24px, 4vw, 48px); background-color: #ffffff; background-image: repeating-linear-gradient(180deg, transparent 0, transparent 31px, rgba(47,107,255,.045) 31px, rgba(47,107,255,.045) 32px); display: flex; flex-direction: column; justify-content: center; gap: 24px">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 24px 40px">
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="display: flex; align-items: center; gap: 7px; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #55607a"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 2px; background: #4a7dff; display: inline-block"></span>What prompted the research</span>
+              <p style="margin: 0; font-size: 15px; line-height: 1.6">Recent changes to French language proficiency requirements. Starting in winter 2026, Université de Montréal revised its French admission requirement, especially for applicants who did not study entirely in French.</p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="display: flex; align-items: center; gap: 7px; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #55607a"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 2px; background: #4a7dff; display: inline-block"></span>Our goal</span>
+              <p style="margin: 0; font-size: 15px; line-height: 1.6">Make the French language requirements <strong>easier to understand</strong>.</p>
+            </div>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; justify-content: space-between">
+              <ul aria-label="Tags" style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px">
+              <li style="font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #46506a; border: 1px solid rgba(47,107,255,.15); background: #ffffff; padding: 5px 10px; border-radius: 100px">UX research</li>
+              <li style="font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #46506a; border: 1px solid rgba(47,107,255,.15); background: #ffffff; padding: 5px 10px; border-radius: 100px">Design</li>
+              </ul>
+              <a href="university-of-montreal.html" class="case-link" style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: #2a5ad6; font-size: 15px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Open case study <span class="arr" aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="nextbtn" data-toggle="udem" aria-label="Show scope and solution" aria-expanded="false" style="position: absolute; right: 18px; bottom: 18px; width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(47,107,255,.2); background: rgba(255,255,255,.92); color: #2a5ad6; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 16px -10px rgba(30,35,50,.18); z-index: 2">
+          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(0deg); transition: transform .5s cubic-bezier(.16,1,.3,1)"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- 03 PLANMONARK -->
+    <section id="planmonark" class="project rise" style="animation-delay: .40s; box-sizing: border-box; padding: 56px clamp(20px, 5vw, 72px) 56px clamp(60px, 6vw, 96px); border-bottom: 1px solid rgba(47,107,255,.16); display: flex; flex-direction: column; gap: 28px">
+      <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; align-items: flex-start; justify-content: space-between; flex-direction: column">
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          
+          <h2 style="margin: 0; font-size: clamp(34px, 4.6vw, 64px); line-height: 0.98; letter-spacing: -0.04em; font-weight: 700"><a href="planmonark.html" class="titlelink">PlanMonark</a></h2>
+        </div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #46506a">A UX research study (n=16) evaluating system usability.</p>
+      </div>
+      <div class="frame" style="position: relative; border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #f3f6ff">
+        <div class="track" data-track="planmonark" style="display: flex; width: 200%; transform: translateX(0%)">
+          <div class="pimg" style="width: 50%; flex: none; overflow: hidden; position: relative">
+            <img class="shot" src="assets/planmonark-menus.webp" alt="PlanMonark study slide: recommendations to structure the menus" style="display: block; width: 100%; aspect-ratio: 16 / 7; object-fit: cover; object-position: center top">
+            <div style="position: absolute; bottom: 18px; left: 18px; right: 90px; display: flex; flex-wrap: wrap; gap: 8px; z-index: 1"><span style="padding: 6px 12px; border-radius: 100px; background: #2a5ad6; box-shadow: 0 4px 12px -8px rgba(30,35,50,.3); font-size: 11px; font-weight: 600; letter-spacing: 0.04em; color: #ffffff">UX Research</span><span style="padding: 6px 12px; border-radius: 100px; background: #2a5ad6; box-shadow: 0 4px 12px -8px rgba(30,35,50,.3); font-size: 11px; font-weight: 600; letter-spacing: 0.04em; color: #ffffff">Design</span></div>
+          </div>
+          <div class="pdet" style="width: 50%; flex: none; box-sizing: border-box; padding: clamp(24px, 4vw, 48px) 104px clamp(24px, 4vw, 48px) clamp(24px, 4vw, 48px); background-color: #ffffff; background-image: repeating-linear-gradient(180deg, transparent 0, transparent 31px, rgba(47,107,255,.045) 31px, rgba(47,107,255,.045) 32px); display: flex; flex-direction: column; justify-content: center; gap: 24px">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 24px 40px">
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="display: flex; align-items: center; gap: 7px; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #55607a"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 2px; background: #4a7dff; display: inline-block"></span>Scope</span>
+              <p style="margin: 0; font-size: 15px; line-height: 1.6">Assessed the usability of the survey creation process, focusing on <strong>learnability, effectiveness, efficiency and user control</strong>.</p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="display: flex; align-items: center; gap: 7px; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #55607a"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 2px; background: #4a7dff; display: inline-block"></span>Deliverable</span>
+              <p style="margin: 0; font-size: 15px; line-height: 1.6">A UX research report covering the study, its results and design recommendations.</p>
+            </div>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; justify-content: space-between">
+              <ul aria-label="Tags" style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px">
+              <li style="font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #46506a; border: 1px solid rgba(47,107,255,.15); background: #ffffff; padding: 5px 10px; border-radius: 100px">UX research</li>
+              <li style="font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #46506a; border: 1px solid rgba(47,107,255,.15); background: #ffffff; padding: 5px 10px; border-radius: 100px">Usability</li>
+              <li style="font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #46506a; border: 1px solid rgba(47,107,255,.15); background: #ffffff; padding: 5px 10px; border-radius: 100px">n=16</li>
+              </ul>
+              <a href="planmonark.html" class="case-link" style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: #2a5ad6; font-size: 15px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Open case study <span class="arr" aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="nextbtn" data-toggle="planmonark" aria-label="Show scope and solution" aria-expanded="false" style="position: absolute; right: 18px; bottom: 18px; width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(47,107,255,.2); background: rgba(255,255,255,.92); color: #2a5ad6; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 16px -10px rgba(30,35,50,.18); z-index: 2">
+          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(0deg); transition: transform .5s cubic-bezier(.16,1,.3,1)"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- 04 MOVINGWALDO -->
+    <section id="movingwaldo" class="project rise" style="animation-delay: .48s; box-sizing: border-box; padding: 56px clamp(20px, 5vw, 72px) 56px clamp(60px, 6vw, 96px); border-bottom: 1px solid rgba(47,107,255,.16); display: flex; flex-direction: column; gap: 28px">
+      <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; align-items: flex-start; justify-content: space-between; flex-direction: column">
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          
+          <h2 style="margin: 0; font-size: clamp(34px, 4.6vw, 64px); line-height: 0.98; letter-spacing: -0.04em; font-weight: 700"><a href="movingwaldo.html" class="titlelink">MovingWaldo</a></h2>
+        </div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #46506a">Canada-wide movers booking platform.</p>
+      </div>
+      <div class="frame" style="position: relative; border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #f3f6ff">
+        <div class="track" data-track="movingwaldo" style="display: flex; width: 200%; transform: translateX(0%)">
+          <div class="pimg" style="width: 50%; flex: none; overflow: hidden; position: relative">
+            <img class="shot" src="assets/movingwaldo-screens.webp" alt="MovingWaldo web and mobile screens" style="display: block; width: 100%; aspect-ratio: 16 / 7; object-fit: cover; object-position: center">
+            <div style="position: absolute; bottom: 18px; left: 18px; right: 90px; display: flex; flex-wrap: wrap; gap: 8px; z-index: 1"><span style="padding: 6px 12px; border-radius: 100px; background: #2a5ad6; box-shadow: 0 4px 12px -8px rgba(30,35,50,.3); font-size: 11px; font-weight: 600; letter-spacing: 0.04em; color: #ffffff">UX/UI Design</span></div>
+          </div>
+          <div class="pdet" style="width: 50%; flex: none; box-sizing: border-box; padding: clamp(24px, 4vw, 48px) 104px clamp(24px, 4vw, 48px) clamp(24px, 4vw, 48px); background-color: #ffffff; background-image: repeating-linear-gradient(180deg, transparent 0, transparent 31px, rgba(47,107,255,.045) 31px, rgba(47,107,255,.045) 32px); display: flex; flex-direction: column; justify-content: center; gap: 24px">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 24px 40px">
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="display: flex; align-items: center; gap: 7px; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #55607a"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 2px; background: #4a7dff; display: inline-block"></span>Scope</span>
+              <p style="margin: 0; font-size: 15px; line-height: 1.6">Design across the <strong>marketing website</strong>, the <strong>booking web app</strong> and <strong>partner experiences</strong>, all working toward one goal: making it simple to find and book trusted movers online.</p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="display: flex; align-items: center; gap: 7px; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #55607a"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 2px; background: #4a7dff; display: inline-block"></span>Highlight</span>
+              <p style="margin: 0; font-size: 15px; line-height: 1.6">An account area where users can review their <strong>moving profile</strong>, <strong>requests and quotes</strong>, <strong>past moves</strong> and <strong>security settings</strong>, so they can verify and revisit the quotes they receive.</p>
+            </div>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; justify-content: space-between">
+              <ul aria-label="Tags" style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px">
+              <li style="font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #46506a; border: 1px solid rgba(47,107,255,.15); background: #ffffff; padding: 5px 10px; border-radius: 100px">Product design</li>
+              <li style="font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #46506a; border: 1px solid rgba(47,107,255,.15); background: #ffffff; padding: 5px 10px; border-radius: 100px">UX</li>
+              <li style="font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #46506a; border: 1px solid rgba(47,107,255,.15); background: #ffffff; padding: 5px 10px; border-radius: 100px">Web app</li>
+              </ul>
+              <a href="movingwaldo.html" class="case-link" style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: #2a5ad6; font-size: 15px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px">Open case study <span class="arr" aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="nextbtn" data-toggle="movingwaldo" aria-label="Show scope and solution" aria-expanded="false" style="position: absolute; right: 18px; bottom: 18px; width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(47,107,255,.2); background: rgba(255,255,255,.92); color: #2a5ad6; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 16px -10px rgba(30,35,50,.18); z-index: 2">
+          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(0deg); transition: transform .5s cubic-bezier(.16,1,.3,1)"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- PEOPLE I'VE WORKED WITH -->
+    <section id="words" class="rise" style="animation-delay: .52s; box-sizing: border-box; padding: 64px clamp(20px, 5vw, 72px) 64px clamp(60px, 6vw, 96px); border-bottom: 1px solid rgba(47,107,255,.16); display: flex; flex-direction: column; gap: 28px">
+      <div class="bento-grid" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-flow: dense; gap: 18px">
+        <figure class="q q-xl" style="margin: 0; box-sizing: border-box; padding: 28px 28px 24px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; box-shadow: 0 6px 18px -14px rgba(30,35,50,.2); display: flex; flex-direction: column; gap: 20px">
+          <span aria-hidden="true" style="font-size: 44px; line-height: 0.6; color: #4a7dff; font-weight: 700">“</span>
+          <blockquote style="margin: 0; font-size: 18px; line-height: 1.6; color: #252a36"><p style="margin: 0 0 10px">I just want to express my gratitude for your presentation this morning and reiterate our excitement for this project.</p><p style="margin: 0 0 10px">I was impressed by the clarity of your hypotheses, the background research and framework for your questions and your potential action plan.</p><p style="margin: 0 0 10px">I am even more impressed by your curiosity, empathy for the needs of the cancer patients and families we seek to serve and your openness to feedback.</p><p style="margin: 0">We are very lucky to have you working with us.</p></blockquote>
+          <figcaption style="margin-top: auto; display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid rgba(47,107,255,.12)">
+            <span aria-hidden="true" style="flex: none; width: 40px; height: 40px; border-radius: 50%; background: #e6eeff; color: #2a5ad6; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; letter-spacing: 0.02em">SO</span>
+            <span style="display: flex; flex-direction: column; gap: 2px">
+              <span style="font-size: 14px; font-weight: 700; color: #252a36">Suzanne O’Brien</span>
+              <span style="font-size: 13px; color: #55607a">Interim Co-Executive Director, Hope &amp; Cope</span>
+            </span>
+          </figcaption>
+        </figure>
+        <figure class="q q-wide" style="margin: 0; box-sizing: border-box; padding: 28px 28px 24px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; box-shadow: 0 6px 18px -14px rgba(30,35,50,.2); display: flex; flex-direction: column; gap: 20px">
+          <span aria-hidden="true" style="font-size: 44px; line-height: 0.6; color: #4a7dff; font-weight: 700">“</span>
+          <blockquote style="margin: 0; font-size: 16px; line-height: 1.6; color: #252a36">Kim is that colleague who brings excitement to work with her infectious positivity. Beyond that, working with Kim is a delight because of her ability to effortlessly transform ideas into reality, delivering high-quality work promptly.</blockquote>
+          <figcaption style="margin-top: auto; display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid rgba(47,107,255,.12)">
+            <span aria-hidden="true" style="flex: none; width: 40px; height: 40px; border-radius: 50%; background: #e6eeff; color: #2a5ad6; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; letter-spacing: 0.02em">AP</span>
+            <span style="display: flex; flex-direction: column; gap: 2px">
+              <span style="font-size: 14px; font-weight: 700; color: #252a36">Alexa Polichronis</span>
+              <span style="font-size: 13px; color: #55607a">Marketing Coordinator, MovingWaldo</span>
+            </span>
+          </figcaption>
+        </figure>
+        <figure class="q" style="margin: 0; box-sizing: border-box; padding: 28px 28px 24px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; box-shadow: 0 6px 18px -14px rgba(30,35,50,.2); display: flex; flex-direction: column; gap: 20px">
+          <span aria-hidden="true" style="font-size: 44px; line-height: 0.6; color: #4a7dff; font-weight: 700">“</span>
+          <blockquote lang="fr" style="margin: 0; font-size: 16px; line-height: 1.6; color: #252a36">Un grand merci et mes félicitations pour votre excellent travail!</blockquote>
+          <figcaption style="margin-top: auto; display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid rgba(47,107,255,.12)">
+            <span aria-hidden="true" style="flex: none; width: 40px; height: 40px; border-radius: 50%; background: #e6eeff; color: #2a5ad6; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; letter-spacing: 0.02em">PG</span>
+            <span style="display: flex; flex-direction: column; gap: 2px">
+              <span style="font-size: 14px; font-weight: 700; color: #252a36">Patricia Girard</span>
+              <span style="font-size: 13px; color: #55607a">Présidente &amp; CEO, PlanMonark</span>
+            </span>
+          </figcaption>
+        </figure>
+        <figure class="q" style="margin: 0; box-sizing: border-box; padding: 28px 28px 24px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; box-shadow: 0 6px 18px -14px rgba(30,35,50,.2); display: flex; flex-direction: column; gap: 20px">
+          <span aria-hidden="true" style="font-size: 44px; line-height: 0.6; color: #4a7dff; font-weight: 700">“</span>
+          <blockquote style="margin: 0; font-size: 16px; line-height: 1.6; color: #252a36">Professional, hard working, adaptive, passionate, and organized are merely a few words to describe Kim. She is an asset to anyone that works with her.</blockquote>
+          <figcaption style="margin-top: auto; display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid rgba(47,107,255,.12)">
+            <span aria-hidden="true" style="flex: none; width: 40px; height: 40px; border-radius: 50%; background: #e6eeff; color: #2a5ad6; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; letter-spacing: 0.02em">MP</span>
+            <span style="display: flex; flex-direction: column; gap: 2px">
+              <span style="font-size: 14px; font-weight: 700; color: #252a36">Mathieu Paquette</span>
+              <span style="font-size: 13px; color: #55607a">Sales Manager, MovingWaldo</span>
+            </span>
+          </figcaption>
+        </figure>
+        <figure class="q q-wide" style="margin: 0; box-sizing: border-box; padding: 28px 28px 24px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; box-shadow: 0 6px 18px -14px rgba(30,35,50,.2); display: flex; flex-direction: column; gap: 20px">
+          <span aria-hidden="true" style="font-size: 44px; line-height: 0.6; color: #4a7dff; font-weight: 700">“</span>
+          <blockquote style="margin: 0; font-size: 16px; line-height: 1.6; color: #252a36">In addition to her professionalism, Kim has always been open-minded and detail-oriented. She delivered a top-notch design for our project very quickly, it was a real pleasure working with her. I highly recommend her.</blockquote>
+          <figcaption style="margin-top: auto; display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid rgba(47,107,255,.12)">
+            <span aria-hidden="true" style="flex: none; width: 40px; height: 40px; border-radius: 50%; background: #e6eeff; color: #2a5ad6; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; letter-spacing: 0.02em">KG</span>
+            <span style="display: flex; flex-direction: column; gap: 2px">
+              <span style="font-size: 14px; font-weight: 700; color: #252a36">Kevin Gilbert</span>
+              <span style="font-size: 13px; color: #55607a">Developer, MovingWaldo</span>
+            </span>
+          </figcaption>
+        </figure>
+        <figure class="q q-wide" style="margin: 0; box-sizing: border-box; padding: 28px 28px 24px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; box-shadow: 0 6px 18px -14px rgba(30,35,50,.2); display: flex; flex-direction: column; gap: 20px">
+          <span aria-hidden="true" style="font-size: 44px; line-height: 0.6; color: #4a7dff; font-weight: 700">“</span>
+          <blockquote lang="fr" style="margin: 0; font-size: 16px; line-height: 1.6; color: #252a36">On lira votre rapport avec attention et partagerons vos insights aux collègues de l’UdeM. Bonne continuation à la maîtrise et au plaisir!</blockquote>
+          <figcaption style="margin-top: auto; display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid rgba(47,107,255,.12)">
+            <span aria-hidden="true" style="flex: none; width: 40px; height: 40px; border-radius: 50%; background: #e6eeff; color: #2a5ad6; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; letter-spacing: 0.02em">TB</span>
+            <span style="display: flex; flex-direction: column; gap: 2px">
+              <span style="font-size: 14px; font-weight: 700; color: #252a36">Thomas Bélanger</span>
+              <span style="font-size: 13px; color: #55607a">Chef de secteur, bureau de projets technologiques, Université de Montréal</span>
+            </span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="rise" style="animation-delay: .56s; box-sizing: border-box; padding: 96px clamp(20px, 5vw, 72px) 72px clamp(60px, 6vw, 96px); background-color: #eef3ff; background-image: repeating-linear-gradient(180deg, transparent 0, transparent 31px, rgba(47,107,255,.06) 31px, rgba(47,107,255,.06) 32px); color: #252a36; display: flex; flex-direction: column; gap: 14px">
+      <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #2a5ad6">08 · Contact</span>
+      <h2 style="margin: 0; font-size: clamp(34px, 5vw, 64px); line-height: 1.02; letter-spacing: -0.04em; font-weight: 700">Have a project in mind?</h2>
+      <a href="https://www.linkedin.com/in/kimberlypapillon/" class="go" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; margin-top: 8px; padding: 10px 22px; border-radius: 100px; background: #ffe680; color: #252a36; text-decoration: none; font-size: 15px; font-weight: 700; letter-spacing: 0.04em">Let's talk <span class="arr" aria-hidden="true">↗</span></a>
+    </section>
+
+    <footer style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding: 28px clamp(20px, 5vw, 72px) 28px clamp(60px, 6vw, 96px); background: #f6f9ff; border-top: 1px solid rgba(47,107,255,.15); font-size: 12px; color: #55607a">
+      <span>© 2026 Kim Papillon</span>
+      <span>Montréal, Canada</span>
+    </footer>
+  </main>
+</div>
+<script>
+(function () {
+  var ids = ["biovia", "hopecope", "manela", "udem", "planmonark", "movingwaldo", "words", "contact"];
+  var links = document.querySelectorAll('[data-nav]');
+  var side = document.getElementById('sidename');
+  var open = {};
+  function setActive(id) {
+    links.forEach(function (a) { a.classList.toggle('is-active', a.getAttribute('data-nav') === id); });
+  }
+  function setOpen(k, on) {
+    open[k] = on;
+    var t = document.querySelector('[data-track="' + k + '"]');
+    var b = document.querySelector('[data-toggle="' + k + '"]');
+    if (t) t.style.transform = on ? 'translateX(-50%)' : 'translateX(0%)';
+    if (b) {
+      b.setAttribute('aria-label', on ? 'Back to image' : 'Show scope and solution');
+      b.setAttribute('aria-expanded', on ? 'true' : 'false');
+      var svg = b.querySelector('svg'); if (svg) svg.style.transform = on ? 'rotate(180deg)' : 'rotate(0deg)';
+    }
+  }
+  document.querySelectorAll('[data-toggle]').forEach(function (b) {
+    b.addEventListener('click', function () { var k = b.getAttribute('data-toggle'); setOpen(k, !open[k]); });
+  });
+  links.forEach(function (a) { a.addEventListener('click', function () { setActive(a.getAttribute('data-nav')); }); });
+  var ticking = false;
+  function onScroll() {
+    ticking = false;
+    var line = window.innerHeight * 0.35, current = ids[0];
+    ids.forEach(function (id) { var el = document.getElementById(id); if (el && el.getBoundingClientRect().top <= line) current = id; });
+    var d = document.documentElement;
+    if (d.scrollHeight - window.innerHeight - window.scrollY < 4) current = ids[ids.length - 1];
+    setActive(current);
+    Object.keys(open).forEach(function (k) {
+      if (!open[k]) return;
+      var r = document.getElementById(k).getBoundingClientRect();
+      if (r.bottom < 0 || r.top > window.innerHeight) setOpen(k, false);
+    });
+    var mh = document.getElementById('top');
+    var show = mh ? mh.getBoundingClientRect().bottom < 40 : true;
+    side.classList.toggle('is-shown', show);
+    side.setAttribute('aria-hidden', show ? 'false' : 'true');
+    var a = side.querySelector('a'); if (a) a.setAttribute('tabindex', show ? '0' : '-1');
+  }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+})();
+</script>
+</body>
+</html>

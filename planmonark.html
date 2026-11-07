@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PlanMonark case study | Kim Papillon</title>
+<meta name="description" content="Kim Papillon, product designer and UX researcher in Montréal: experiences, interfaces and research.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232a5ad6'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='white' text-anchor='middle'%3EKP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;display=swap">
+<style>
+html,body{max-width:100%;overflow-x:clip}
+img,video{max-width:100%}
+body{margin:0;background:#fbfcff}
+a{color:#2a5ad6}a:hover{color:#1f4cc0}
+.zoomable{transition:opacity .25s}
+.zoomable:hover{opacity:.9}
+.zoomable:focus-visible{outline:2px solid #2a5ad6;outline-offset:3px}
+.crumb a{color:#55607a;text-decoration:none}.crumb a:hover{color:#2a5ad6;text-decoration:underline}
+.home{color:#252a36;text-decoration:none}.home:hover{color:#2a5ad6}
+.nextcard{transition:transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s, border-color .3s}
+.nextcard:hover{transform:translateY(-4px);border-color:rgba(47,107,255,.35);box-shadow:0 18px 40px -28px rgba(30,35,50,.3)}
+.nextcard .nimg{transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
+.nextcard:hover .nimg{transform:scale(1.03)}
+.carbtn{transition:background .25s, transform .3s cubic-bezier(.16,1,.3,1)}
+.carbtn:hover{background:#e6eeff;transform:scale(1.06)}
+.cartrack{animation:slidein .5s cubic-bezier(.16,1,.3,1)}
+@keyframes slidein{from{opacity:.4;transform:translateX(24px)}to{opacity:1;transform:none}}
+.carcard{transition:transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s, border-color .3s}
+.carcard:hover{transform:translateY(-4px);border-color:rgba(47,107,255,.35);box-shadow:0 18px 40px -28px rgba(30,35,50,.3)}
+.carcard .cimg{transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
+.carcard:hover .cimg{transform:scale(1.03)}
+@media (max-width: 700px){.carcard{flex-basis:100% !important}}
+.back{transition:color .25s}
+.back .arr{display:inline-block;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.back:hover .arr{transform:translateX(-4px)}
+.card{transition:transform .45s cubic-bezier(.16,1,.3,1), box-shadow .45s}
+.card:hover{transform:translateY(-3px);box-shadow:0 16px 32px -24px rgba(30,35,50,.25)}
+.nextcard .arr{display:inline-block;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.nextcard:hover .arr{transform:translateX(6px)}
+@media (max-width: 700px){
+  .paper{background-image:repeating-linear-gradient(180deg, transparent 0, transparent 31px, rgba(47,107,255,.04) 31px, rgba(47,107,255,.04) 32px) !important}
+  .hwrap,.mwrap{padding-left:16px !important;padding-right:16px !important}
+  .mwrap{gap:48px !important;padding-top:32px !important}
+  .mwrap section{padding-top:24px !important}
+  .card{padding:18px !important}
+  .mwrap figure img,.cimg{aspect-ratio:auto !important;height:auto !important;object-fit:contain !important;transform:none !important}
+}
+.rise{animation:rise .9s cubic-bezier(.16,1,.3,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.rise{animation:none}.card,.back .arr,.nextcard .arr{transition:none}.card:hover{transform:none}}
+</style>
+
+<style>
+#lightbox{display:flex}
+#lightbox[hidden]{display:none !important}
+</style>
+</head>
+<body>
+<div class="paper" style="min-height: 100vh; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #252a36; -webkit-font-smoothing: antialiased; background-color: #fbfcff; background-image: linear-gradient(90deg, transparent 39px, rgba(220,68,68,.32) 39px, rgba(220,68,68,.32) 40px, transparent 40px), repeating-linear-gradient(180deg, transparent 0, transparent 31px, rgba(47,107,255,.04) 31px, rgba(47,107,255,.04) 32px)">
+
+  <header style="border-bottom: 1px solid rgba(47,107,255,.16); background: #ffffff">
+    <div class="hwrap" style="max-width: 1080px; margin: 0 auto; box-sizing: border-box; padding: 32px clamp(20px, 5vw, 64px) 14px clamp(60px, 6vw, 80px); display: flex; align-items: center; min-height: 72px">
+      <a href="index.html" class="home" style="display: inline-flex; flex-direction: column; gap: 2px; min-height: 44px; justify-content: center"><span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 26px; font-weight: 400; letter-spacing: -0.01em; line-height: 1">Kim Papillon</span><span style="font-size: 12px; color: #55607a">Experiences, Interfaces and Research</span></a>
+    </div>
+  </header>
+
+  <main class="mwrap" style="max-width: 1080px; margin: 0 auto; box-sizing: border-box; padding: 56px clamp(20px, 5vw, 64px) 80px clamp(60px, 6vw, 80px); display: flex; flex-direction: column; gap: 64px">
+
+    <div class="rise" style="display: flex; flex-direction: column; gap: 18px">
+      <nav aria-label="Breadcrumb" class="crumb"><ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 14px; color: #55607a"><li><a href="index.html">Work</a></li><li aria-hidden="true">/</li><li aria-current="page" style="color: #252a36; font-weight: 600">PlanMonark</li></ol></nav>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="padding: 6px 12px; border-radius: 100px; background: #2a5ad6; color: #ffffff; font-size: 11px; font-weight: 600; letter-spacing: 0.04em">UX Research</span><span style="padding: 6px 12px; border-radius: 100px; background: #2a5ad6; color: #ffffff; font-size: 11px; font-weight: 600; letter-spacing: 0.04em">Design</span></div>
+      <h1 style="margin: 0; font-size: clamp(40px, 6vw, 72px); line-height: 0.98; letter-spacing: -0.04em; font-weight: 700">PlanMonark</h1>
+      <p style="margin: 0; font-size: clamp(17px, 1.6vw, 21px); line-height: 1.5; color: #46506a; max-width: 60ch">A usability evaluation (n=16) of PlanMonark’s survey creation platform, from editing a survey to publishing it.</p>
+      <dl style="margin: 12px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); gap: 20px 32px; padding-top: 24px; border-top: 1px solid rgba(47,107,255,.14)">
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <dt style="font-size: 12px; font-weight: 600; color: #55607a">Role</dt>
+          <dd style="margin: 0; font-size: 15px; line-height: 1.5">UX research and UI design</dd>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <dt style="font-size: 12px; font-weight: 600; color: #55607a">Team</dt>
+          <dd style="margin: 0; font-size: 15px; line-height: 1.5">4 researchers, HEC Montréal</dd>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <dt style="font-size: 12px; font-weight: 600; color: #55607a">Client</dt>
+          <dd style="margin: 0; font-size: 15px; line-height: 1.5">Patricia Girard, Présidente &amp; CEO</dd>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <dt style="font-size: 12px; font-weight: 600; color: #55607a">Tools</dt>
+          <dd style="margin: 0; font-size: 15px; line-height: 1.5">Figma, UX Tweak</dd>
+        </div>
+      </dl>
+    </div>
+
+    <figure class="rise" style="animation-delay: .1s; margin: 0; border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #f3f6ff">
+      <button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/planmonark-menus.webp" alt="PlanMonark study slide: recommendations to structure the menus" style="display: block; width: 100%; aspect-ratio: 16 / 8; object-fit: contain"></button>
+    </figure>
+
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">01</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">Mandate</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <p style="margin: 0; font-size: 17px; line-height: 1.65">PlanMonark helps organizations turn employee survey data into meaningful action for management. The evaluation assessed the usability of survey creation, focusing on <strong>learnability, effectiveness, efficiency and user control</strong>.</p>
+        <p style="margin: 0; padding: 20px 24px; background: #eef3ff; border-radius: 14px; font-size: 18px; line-height: 1.55">Can first-time users create and edit surveys with the current interface and information architecture, with minimal errors, enough guidance and no cognitive overload?</p>
+        <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 17px; line-height: 1.6"><li>Can participants modify an existing question without confusion or error?</li><li>Can they create new elements efficiently?</li><li>Can they customize the survey to match their brand?</li><li>Is the action to publish clear and discoverable?</li><li>Is the information architecture easy to understand?</li></ul>
+      </div>
+    </section>
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">02</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">Method</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 12px"><div style="padding: 20px 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 32px; font-weight: 700; letter-spacing: -0.03em; color: #2a5ad6">16</span><span style="font-size: 14px; line-height: 1.45; color: #46506a">participants, 19 to 58 years old</span></div><div style="padding: 20px 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 32px; font-weight: 700; letter-spacing: -0.03em; color: #2a5ad6">6 / 10</span><span style="font-size: 14px; line-height: 1.45; color: #46506a">beginner and regular survey creators</span></div><div style="padding: 20px 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 32px; font-weight: 700; letter-spacing: -0.03em; color: #2a5ad6">60 min</span><span style="font-size: 14px; line-height: 1.45; color: #46506a">moderated sessions with think-aloud</span></div><div style="padding: 20px 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 32px; font-weight: 700; letter-spacing: -0.03em; color: #2a5ad6">2</span><span style="font-size: 14px; line-height: 1.45; color: #46506a">information architectures compared</span></div></div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/planmonark-participants.webp" alt="Participants slide: sample, inclusion and exclusion criteria" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">The study sample: a convenience sample of 16 first-time PlanMonark users, split into beginners and regular survey creators.</figcaption></figure>
+        <p style="margin: 0; font-size: 17px; line-height: 1.65">Each session combined behavioural measures (time on task, success rate) with self-reported ones (Customer Effort Score, CSAT, NASA-TLX), plus a semi-structured interview. Group differences were tested with Mann–Whitney–Wilcoxon and Wilcoxon signed-rank tests.</p>
+      </div>
+    </section>
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">03</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">Results</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 12px"><div style="padding: 20px 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 32px; font-weight: 700; letter-spacing: -0.03em; color: #2a5ad6">12/16</span><span style="font-size: 14px; line-height: 1.45; color: #46506a">edited a question successfully</span></div><div style="padding: 20px 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 32px; font-weight: 700; letter-spacing: -0.03em; color: #2a5ad6">10/16</span><span style="font-size: 14px; line-height: 1.45; color: #46506a">created survey elements</span></div><div style="padding: 20px 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 32px; font-weight: 700; letter-spacing: -0.03em; color: #2a5ad6">0/16</span><span style="font-size: 14px; line-height: 1.45; color: #46506a">customized the survey branding</span></div><div style="padding: 20px 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 32px; font-weight: 700; letter-spacing: -0.03em; color: #2a5ad6">2/16</span><span style="font-size: 14px; line-height: 1.45; color: #46506a">found how to publish</span></div></div>
+        <p style="margin: 0; font-size: 17px; line-height: 1.65"><strong>Information architecture was the root usability issue.</strong> Competing panels made navigation unpredictable, and critical actions like publishing and customization lacked visibility. The platform still showed learnability potential, and prior survey-tool experience became a liability: regular users looked for familiar patterns and took longer.</p>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/planmonark-editing.webp" alt="Survey editing results slide with charts and participant quotes" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">Survey editing: 12/16 succeeded, but every participant reported clarity and feedback issues. Regulars rated the platform as less clear and organized than beginners (p = 0.0411).</figcaption></figure>
+        <blockquote style="margin: 0; padding: 4px 0 4px 18px; border-left: 2px solid rgba(47,107,255,.35); font-size: 16px; line-height: 1.6; color: #46506a">“Looks easy to use if you actually know where to go, it doesn’t look hard, it’s just unfamiliar.” <span style="font-size: 13px; color: #55607a">P11</span></blockquote>
+        <blockquote style="margin: 0; padding: 4px 0 4px 18px; border-left: 2px solid rgba(47,107,255,.35); font-size: 16px; line-height: 1.6; color: #46506a">“I don’t know how to publish, should I go in the general?” <span style="font-size: 13px; color: #55607a">P4</span></blockquote>
+        <blockquote style="margin: 0; padding: 4px 0 4px 18px; border-left: 2px solid rgba(47,107,255,.35); font-size: 16px; line-height: 1.6; color: #46506a">“Changing the color thing, I couldn’t find that for the life of me.” <span style="font-size: 13px; color: #55607a">P13</span></blockquote>
+
+        <h3 style="margin: 12px 0 0; font-size: 19px; letter-spacing: -0.01em">Testing a revised information architecture</h3>
+        <p style="margin: 0; font-size: 17px; line-height: 1.65">We compared PlanMonark’s current IA with our proposed version, counterbalanced across participants. For adding conditional logic, success rose from <strong>3/16 to 9/16</strong> with the proposed structure (p = 0.0156).</p>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/planmonark-ia-test.webp" alt="Slide comparing success rates between the current and proposed IA" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">Current IA (version A) compared with our proposed IA (version B) on two tasks.</figcaption></figure>
+      </div>
+    </section>
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">04</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">Recommendations</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 16px">
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">High</span>
+            <h3 style="margin: 0; font-size: 17px">Simplify the menus</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Navigation labels in common language, arranged by predictable workflows.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">High</span>
+            <h3 style="margin: 0; font-size: 17px">Reduce competing options</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Keep the primary left panel open by default so secondary panels do not compete for attention.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">High</span>
+            <h3 style="margin: 0; font-size: 17px">Make publishing obvious</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">A visible “Publish” action in more than one place, with a confirmation modal and a clear published status.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">Medium</span>
+            <h3 style="margin: 0; font-size: 17px">Group styling with live feedback</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Group customization by area and highlight the affected element on hover.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">Medium</span>
+            <h3 style="margin: 0; font-size: 17px">Add titles, hover labels and tooltips</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Guide beginners and reassure regular users that they are in the right place.</p>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 24px 20px"><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/planmonark-left-panel.webp" alt="Recommendation slide: prioritize left primary actions" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">Prioritize the left primary actions panel so it stays open and does not compete with secondary options.</figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/planmonark-branding.webp" alt="Recommendation slide: group customization with visual feedback" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">Group customization options by area, and highlight the affected element when hovering a style control.</figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/planmonark-publish.webp" alt="Recommendation slide: make publish visible" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">Make “Publish” visible in more than one place, renamed from “execute”, with a confirmation modal.</figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/planmonark-recap.webp" alt="Recap slide of recommendations ranked by severity" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">The final recap: five recommendations ranked by severity.</figcaption></figure></div>
+        <figure style="margin: 0; padding: 28px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 16px">
+          <blockquote lang="fr" style="margin: 0; font-size: 20px; line-height: 1.5">“Un grand merci et mes félicitations pour votre excellent travail!”</blockquote>
+          <figcaption style="font-size: 14px; color: #55607a"><strong style="color: #252a36">Patricia Girard</strong>, Présidente &amp; CEO, PlanMonark</figcaption>
+        </figure>
+      </div>
+    </section>
+    <footer style="display: flex; flex-direction: column; gap: 16px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.16)">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px">
+        <h2 style="margin: 0; font-size: 22px; letter-spacing: -0.02em">More case studies</h2>
+        <div style="display: flex; gap: 10px">
+          <button type="button" class="carbtn" data-car="prev" aria-label="Previous case studies" style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(47,107,255,.2); background: #ffffff; color: #2a5ad6; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg></button>
+          <button type="button" class="carbtn" data-car="next" aria-label="Next case studies" style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(47,107,255,.2); background: #ffffff; color: #2a5ad6; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></button>
+        </div>
+      </div>
+      <div style="overflow: hidden">
+        <div class="cartrack" style="display: flex; gap: 16px">
+          
+            <a href="movingwaldo.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #f3f6ff"><img class="cimg" src="assets/movingwaldo-screens.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">MovingWaldo</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">Canada-wide movers booking platform.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+            <a href="biovia.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #f3f6ff"><img class="cimg" src="assets/biovia-scientists.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">Dassault Systèmes BIOVIA</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">Rethinking ONE Lab’s batch release workflow for scientists.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+            <a href="hope-and-cope.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #d9e6f5"><img class="cimg" src="assets/hopecope-hero.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">Hope &amp; Cope</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">Helping patients and caregivers find cancer support at the right time.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+            <a href="manela.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #f3f6ff"><img class="cimg" src="assets/manela-onboarding.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">Manela</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">A SaaS platform for parental leave planning.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+            <a href="university-of-montreal.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #f3f6ff"><img class="cimg" src="assets/udem-campus.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">University of Montreal</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">Making the new French admission requirements easier to understand.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <div id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Enlarged image" style="position: fixed; inset: 0; z-index: 50; overflow-y: auto; background: rgba(20,24,34,.86); box-sizing: border-box; padding: 64px 20px 40px; display: flex; justify-content: center; align-items: flex-start; cursor: zoom-out">
+    <button type="button" data-close-btn aria-label="Close enlarged image" style="position: fixed; top: 16px; right: 16px; width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(255,255,255,.3); background: rgba(255,255,255,.12); color: #ffffff; font-size: 22px; line-height: 1; cursor: pointer">×</button>
+    <img id="lightbox-img" src="" alt="" style="display: block; width: auto; max-width: min(1400px, 100%); height: auto; margin: auto 0; border-radius: 10px; background: #ffffff; box-shadow: 0 30px 80px -20px rgba(0,0,0,.6); cursor: default">
+  </div>
+
+</div>
+<script>
+(function () {
+  var lb = document.getElementById('lightbox'), lbImg = document.getElementById('lightbox-img'), last = null;
+  function close() { lb.hidden = true; lbImg.src = ''; document.body.style.overflow = ''; if (last) last.focus(); }
+  document.querySelectorAll('[data-zoom]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var img = b.querySelector('img'); if (!img) return;
+      last = b; lbImg.src = img.currentSrc || img.src; lbImg.alt = img.alt || '';
+      lb.hidden = false; document.body.style.overflow = 'hidden'; lb.querySelector('[data-close-btn]').focus();
+    });
+  });
+  lb.addEventListener('click', function (e) { if (e.target !== lbImg) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !lb.hidden) close(); });
+  var track = document.querySelector('.cartrack');
+  var next = document.querySelector('[data-car="next"]'), prev = document.querySelector('[data-car="prev"]');
+  if (track && next && prev) {
+    next.addEventListener('click', function () { track.appendChild(track.firstElementChild); });
+    prev.addEventListener('click', function () { track.insertBefore(track.lastElementChild, track.firstElementChild); });
+  }
+})();
+</script>
+</body>
+</html>

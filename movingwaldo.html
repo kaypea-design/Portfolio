@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MovingWaldo case study | Kim Papillon</title>
+<meta name="description" content="Kim Papillon, product designer and UX researcher in Montréal: experiences, interfaces and research.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232a5ad6'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='white' text-anchor='middle'%3EKP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;display=swap">
+<style>
+html,body{max-width:100%;overflow-x:clip}
+img,video{max-width:100%}
+body{margin:0;background:#fbfcff}
+a{color:#2a5ad6}a:hover{color:#1f4cc0}
+.zoomable{transition:opacity .25s}
+.zoomable:hover{opacity:.9}
+.zoomable:focus-visible{outline:2px solid #2a5ad6;outline-offset:3px}
+.crumb a{color:#55607a;text-decoration:none}.crumb a:hover{color:#2a5ad6;text-decoration:underline}
+.home{color:#252a36;text-decoration:none}.home:hover{color:#2a5ad6}
+.nextcard{transition:transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s, border-color .3s}
+.nextcard:hover{transform:translateY(-4px);border-color:rgba(47,107,255,.35);box-shadow:0 18px 40px -28px rgba(30,35,50,.3)}
+.nextcard .nimg{transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
+.nextcard:hover .nimg{transform:scale(1.03)}
+.carbtn{transition:background .25s, transform .3s cubic-bezier(.16,1,.3,1)}
+.carbtn:hover{background:#e6eeff;transform:scale(1.06)}
+.cartrack{animation:slidein .5s cubic-bezier(.16,1,.3,1)}
+@keyframes slidein{from{opacity:.4;transform:translateX(24px)}to{opacity:1;transform:none}}
+.carcard{transition:transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s, border-color .3s}
+.carcard:hover{transform:translateY(-4px);border-color:rgba(47,107,255,.35);box-shadow:0 18px 40px -28px rgba(30,35,50,.3)}
+.carcard .cimg{transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
+.carcard:hover .cimg{transform:scale(1.03)}
+@media (max-width: 700px){.carcard{flex-basis:100% !important}}
+.back{transition:color .25s}
+.back .arr{display:inline-block;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.back:hover .arr{transform:translateX(-4px)}
+.card{transition:transform .45s cubic-bezier(.16,1,.3,1), box-shadow .45s}
+.card:hover{transform:translateY(-3px);box-shadow:0 16px 32px -24px rgba(30,35,50,.25)}
+.nextcard .arr{display:inline-block;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.nextcard:hover .arr{transform:translateX(6px)}
+@media (max-width: 700px){
+  .paper{background-image:repeating-linear-gradient(180deg, transparent 0, transparent 31px, rgba(47,107,255,.04) 31px, rgba(47,107,255,.04) 32px) !important}
+  .hwrap,.mwrap{padding-left:16px !important;padding-right:16px !important}
+  .mwrap{gap:48px !important;padding-top:32px !important}
+  .mwrap section{padding-top:24px !important}
+  .card{padding:18px !important}
+  .mwrap figure img,.cimg{aspect-ratio:auto !important;height:auto !important;object-fit:contain !important;transform:none !important}
+}
+.rise{animation:rise .9s cubic-bezier(.16,1,.3,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.rise{animation:none}.card,.back .arr,.nextcard .arr{transition:none}.card:hover{transform:none}}
+</style>
+
+<style>
+#lightbox{display:flex}
+#lightbox[hidden]{display:none !important}
+</style>
+</head>
+<body>
+<div class="paper" style="min-height: 100vh; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #252a36; -webkit-font-smoothing: antialiased; background-color: #fbfcff; background-image: linear-gradient(90deg, transparent 39px, rgba(220,68,68,.32) 39px, rgba(220,68,68,.32) 40px, transparent 40px), repeating-linear-gradient(180deg, transparent 0, transparent 31px, rgba(47,107,255,.04) 31px, rgba(47,107,255,.04) 32px)">
+
+  <header style="border-bottom: 1px solid rgba(47,107,255,.16); background: #ffffff">
+    <div class="hwrap" style="max-width: 1080px; margin: 0 auto; box-sizing: border-box; padding: 32px clamp(20px, 5vw, 64px) 14px clamp(60px, 6vw, 80px); display: flex; align-items: center; min-height: 72px">
+      <a href="index.html" class="home" style="display: inline-flex; flex-direction: column; gap: 2px; min-height: 44px; justify-content: center"><span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 26px; font-weight: 400; letter-spacing: -0.01em; line-height: 1">Kim Papillon</span><span style="font-size: 12px; color: #55607a">Experiences, Interfaces and Research</span></a>
+    </div>
+  </header>
+
+  <main class="mwrap" style="max-width: 1080px; margin: 0 auto; box-sizing: border-box; padding: 56px clamp(20px, 5vw, 64px) 80px clamp(60px, 6vw, 80px); display: flex; flex-direction: column; gap: 64px">
+
+    <div class="rise" style="display: flex; flex-direction: column; gap: 18px">
+      <nav aria-label="Breadcrumb" class="crumb"><ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 14px; color: #55607a"><li><a href="index.html">Work</a></li><li aria-hidden="true">/</li><li aria-current="page" style="color: #252a36; font-weight: 600">MovingWaldo</li></ol></nav>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="padding: 6px 12px; border-radius: 100px; background: #2a5ad6; color: #ffffff; font-size: 11px; font-weight: 600; letter-spacing: 0.04em">UX/UI Design</span></div>
+      <h1 style="margin: 0; font-size: clamp(40px, 6vw, 72px); line-height: 0.98; letter-spacing: -0.04em; font-weight: 700">MovingWaldo</h1>
+      <p style="margin: 0; font-size: clamp(17px, 1.6vw, 21px); line-height: 1.5; color: #46506a; max-width: 60ch">Canada-wide movers booking platform. Three years of onboarding form optimizations and a new account settings page, helping people book movers online.</p>
+      <dl style="margin: 12px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); gap: 20px 32px; padding-top: 24px; border-top: 1px solid rgba(47,107,255,.14)">
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <dt style="font-size: 12px; font-weight: 600; color: #55607a">Role</dt>
+          <dd style="margin: 0; font-size: 15px; line-height: 1.5">Lead Product Designer</dd>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <dt style="font-size: 12px; font-weight: 600; color: #55607a">Team</dt>
+          <dd style="margin: 0; font-size: 15px; line-height: 1.5">1 head of product, 1 developer, 1 designer</dd>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <dt style="font-size: 12px; font-weight: 600; color: #55607a">Timeline</dt>
+          <dd style="margin: 0; font-size: 15px; line-height: 1.5">2021 to 2023</dd>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <dt style="font-size: 12px; font-weight: 600; color: #55607a">Platform</dt>
+          <dd style="margin: 0; font-size: 15px; line-height: 1.5">Website and web app</dd>
+        </div>
+      </dl>
+    </div>
+
+    <figure class="rise" style="animation-delay: .1s; margin: 0; border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #f3f6ff">
+      <button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/movingwaldo-screens.webp" alt="MovingWaldo web and mobile screens" style="display: block; width: 100%; aspect-ratio: 16 / 8; object-fit: cover"></button>
+    </figure>
+
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">01</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">The problem</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <p style="margin: 0; padding: 20px 24px; background: #eef3ff; border-radius: 14px; font-size: 18px; line-height: 1.55">“We noticed drops, confusion and user errors at various points in the onboarding funnel.”</p>
+        <p style="margin: 0; font-size: 17px; line-height: 1.65">MovingWaldo is a relocation app and website for generating moving estimates. The onboarding form was where users told us about their move, and it was losing them along the way.</p>
+      </div>
+    </section>
+    
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">03</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">Form optimizations</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px">
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">2021</span>
+            <h3 style="margin: 0; font-size: 17px">Showing available services</h3>
+            <dl style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 12px; font-weight: 600; color: #55607a">Question</dt><dd style="margin: 0; font-size: 15px; line-height: 1.55">How might we show the variety of services available in the form?</dd></div><div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 12px; font-weight: 600; color: #55607a">Finding</dt><dd style="margin: 0; font-size: 15px; line-height: 1.55">Users hesitated on a first screen that asked for addresses before showing any value.</dd></div><div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 12px; font-weight: 600; color: #55607a">Solution</dt><dd style="margin: 0; font-size: 15px; line-height: 1.55">A new first screen of service cards, with one preselected based on acquisition source, built to scale as services were added.</dd></div></dl>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">2022</span>
+            <h3 style="margin: 0; font-size: 17px">Knowing where you are</h3>
+            <dl style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 12px; font-weight: 600; color: #55607a">Question</dt><dd style="margin: 0; font-size: 15px; line-height: 1.55">How might we help users understand where they are in the funnel?</dd></div><div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 12px; font-weight: 600; color: #55607a">Finding</dt><dd style="margin: 0; font-size: 15px; line-height: 1.55">Users pressed back after step 7 because nothing showed what came next, and the form ended with no review or confirmation.</dd></div><div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 12px; font-weight: 600; color: #55607a">Solution</dt><dd style="margin: 0; font-size: 15px; line-height: 1.55">A confirmation screen with previous and current addresses, pending requests, next steps and items needing special handling.</dd></div></dl>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">2023</span>
+            <h3 style="margin: 0; font-size: 17px">Better sales estimates</h3>
+            <dl style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 12px; font-weight: 600; color: #55607a">Question</dt><dd style="margin: 0; font-size: 15px; line-height: 1.55">How might we adapt the form for more accurate sales estimates?</dd></div><div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 12px; font-weight: 600; color: #55607a">Finding</dt><dd style="margin: 0; font-size: 15px; line-height: 1.55">Sales had to call every customer for clarifying details, which did not scale.</dd></div><div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 12px; font-weight: 600; color: #55607a">Solution</dt><dd style="margin: 0; font-size: 15px; line-height: 1.55">New questions on square footage and volume to estimate movers and truck size, with address fields aligned one-to-one with the sales CRM.</dd></div></dl>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">04</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">User profile page</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <p style="margin: 0; padding: 20px 24px; background: #eef3ff; border-radius: 14px; font-size: 18px; line-height: 1.55">“I put in the wrong address, how do I change it?”</p>
+        <p style="margin: 0; font-size: 17px; line-height: 1.65">The platform gathered a lot of user information, but did not have a settings or profile page for users to review their contact information and inputs, nor was there a history of their activities. If a user entered the wrong contact information, there was nowhere to verify and update it. And since this is a platform where users request quotes for their move, there was no record for them to view which quotes they received in case they wanted to review them again.</p>
+        <h3 style="margin: 12px 0 0; font-size: 19px; letter-spacing: -0.01em">Direction</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">01</span>
+            <h3 style="margin: 0; font-size: 17px">Understand the expectation</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">We created a list of the common expectations one should be able to easily find on a settings page.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">02</span>
+            <h3 style="margin: 0; font-size: 17px">Use data we already have, not data to obtain</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">We already had all the information in a database. We just needed to decide how to bring it forward to the customer.</p>
+          </div>
+        </div>
+        <h3 style="margin: 12px 0 0; font-size: 19px; letter-spacing: -0.01em">Expectation mapping</h3>
+        <p style="margin: 0; padding: 20px 24px; background: #eef3ff; border-radius: 14px; font-size: 18px; line-height: 1.55">What would someone expect to find or do on a profile page?</p>
+        <p style="margin: 0; font-size: 17px; line-height: 1.65">Based primarily on feedback from the customer service team and commonly expected actions for a profile and settings page. Customer service previously had to make edits to customer pages in the backend admin portal. Even if the information was correctly changed, there was still nowhere for the user to find and review it.</p>
+        <p style="margin: 0; font-size: 17px; line-height: 1.65">The original page was not only difficult to find, as it was not in the header menu, but it also followed an older style of UI no longer used in the app. The only way a user could see their address inputs was if they were planning to move again and needed to edit the origin and destination address.</p>
+        <h3 style="margin: 12px 0 0; font-size: 19px; letter-spacing: -0.01em">Version 1</h3>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/movingwaldo-original-v1.webp" alt="Original profile page and Version 1" style="display: block; width: 100%; aspect-ratio: 2048 / 977; object-fit: contain"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">For the first version, we reworked the original page into a more modern design that fit the rest of the app, and added easy access to this page from the main menu.</figcaption></figure>
+        <h3 style="margin: 12px 0 0; font-size: 19px; letter-spacing: -0.01em">Versions 2 and 3</h3>
+        <p style="margin: 0; font-size: 17px; line-height: 1.65">Reworking the main page wasn’t enough. I needed to create a page that was scalable for the product roadmap. From Version 1, I broke down the major elements of the profile page into contact info, moving addresses and the authorization form (consent to third-party use of user information).</p>
+        <p style="margin: 0; font-size: 17px; line-height: 1.65">I felt that the Version 2 layout would not scale well either: if we needed to add more pages and settings, users would be scrolling a very long page to get to their destination. So I shrank the side menu, pinned it to the top left corner and gave it a selected state. We also needed to emphasize when a user still had to sign their authorization form, so I added a yellow exclamation point alert to signal that their attention was needed.</p>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/movingwaldo-v2-v3.webp" alt="Version 2 and Version 3 of the profile page" style="display: block; width: 100%; aspect-ratio: 2048 / 1393; object-fit: contain"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">Version 2 splits the page into clear groups. Version 3 adds the compact side menu and the authorization alert.</figcaption></figure>
+        <h3 style="margin: 12px 0 0; font-size: 19px; letter-spacing: -0.01em">Implementing feedback from the head of product</h3>
+        <p style="margin: 0; font-size: 17px; line-height: 1.65">Keeping the overall layout, with scale in mind. The head of product felt that the selected edit state on a blue background would look overwhelming if there were more fields to fill in the future. I simplified the style, making the sections clearer in one column, so that new sections would be easier to scan.</p>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/movingwaldo-v3-v4.webp" alt="Version 3 and Version 4 of the profile page" style="display: block; width: 100%; aspect-ratio: 2048 / 1985; object-fit: contain"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">Version 3 compared with Version 4, simplified into a single column.</figcaption></figure>
+        <h3 style="margin: 12px 0 0; font-size: 19px; letter-spacing: -0.01em">Final design for the MVP</h3>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/movingwaldo-original-final.webp" alt="Original profile page compared with the final design" style="display: block; width: 100%; aspect-ratio: 2048 / 1393; object-fit: contain"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">The original page compared with the final design.</figcaption></figure>
+        <p style="margin: 0; font-size: 17px; line-height: 1.65">The final account settings page consisted of four screens:</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px">
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">1</span>
+            <h3 style="margin: 0; font-size: 17px">Moving profile</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Users can edit and review their contact and moving information.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">2</span>
+            <h3 style="margin: 0; font-size: 17px">Requests and quotes</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Every change of address or moving quote request can be viewed here. There is no option to edit, as the requests have already been sent to partner companies.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">3</span>
+            <h3 style="margin: 0; font-size: 17px">Past moves</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">For users who used the service more than once: their previous moves, requests and quotes, organized by year.</p>
+          </div>
+          <div class="card" style="padding: 22px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">4</span>
+            <h3 style="margin: 0; font-size: 17px">Security and privacy</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #46506a">Added for future scale: users can update their password, delete their account or select notification preferences.</p>
+          </div>
+        </div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><div style="border: 1px solid rgba(47,107,255,.16); border-radius: 14px; overflow: hidden; background: #ffffff"><button type="button" class="zoomable" data-zoom aria-label="Enlarge image" style="display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in"><img src="assets/movingwaldo-final-screens.webp" alt="Final Moving profile and Requests and quotes screens" style="display: block; width: 100%; aspect-ratio: 2048 / 1693; object-fit: contain"></button></div><figcaption style="font-size: 14px; line-height: 1.55; color: #46506a">The final Moving profile and Requests and quotes screens.</figcaption></figure>
+        <h3 style="margin: 12px 0 0; font-size: 19px; letter-spacing: -0.01em">Outcome</h3>
+        <p style="margin: 0; font-size: 17px; line-height: 1.65"><strong>Users now had control over their information.</strong></p>
+        <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 17px; line-height: 1.6"><li>They could review their information for data accuracy and security.</li><li>They could manage their accounts without having to call customer service.</li><li>Access to their own information helps build and maintain trust and transparency, confirming how and when their information was last used.</li></ul>
+      </div>
+    </section>
+    <section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.14)">
+      <div style="flex: 1 1 200px; max-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 12px; font-weight: 700; color: #2a5ad6">05</span>
+        <h2 style="margin: 0; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em">Outcome</h2>
+      </div>
+      <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 17px; line-height: 1.6"><li>Clearer expectations for users about the service.</li><li>An easier path for the sales team to launch a new service booking feature.</li><li>Users can check and manage their own information without contacting customer service, building trust and transparency.</li></ul>
+        <figure style="margin: 0; padding: 28px; background: #ffffff; border: 1px solid rgba(47,107,255,.14); border-radius: 14px; display: flex; flex-direction: column; gap: 16px">
+          <blockquote style="margin: 0; font-size: 20px; line-height: 1.5">“She delivered a top-notch design for our project very quickly, it was a real pleasure working with her.”</blockquote>
+          <figcaption style="font-size: 14px; color: #55607a"><strong style="color: #252a36">Kevin Gilbert</strong>, Developer, MovingWaldo</figcaption>
+        </figure>
+      </div>
+    </section>
+    <footer style="display: flex; flex-direction: column; gap: 16px; padding-top: 32px; border-top: 1px solid rgba(47,107,255,.16)">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px">
+        <h2 style="margin: 0; font-size: 22px; letter-spacing: -0.02em">More case studies</h2>
+        <div style="display: flex; gap: 10px">
+          <button type="button" class="carbtn" data-car="prev" aria-label="Previous case studies" style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(47,107,255,.2); background: #ffffff; color: #2a5ad6; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg></button>
+          <button type="button" class="carbtn" data-car="next" aria-label="Next case studies" style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(47,107,255,.2); background: #ffffff; color: #2a5ad6; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></button>
+        </div>
+      </div>
+      <div style="overflow: hidden">
+        <div class="cartrack" style="display: flex; gap: 16px">
+          
+            <a href="biovia.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #f3f6ff"><img class="cimg" src="assets/biovia-scientists.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">Dassault Systèmes BIOVIA</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">Rethinking ONE Lab’s batch release workflow for scientists.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+            <a href="hope-and-cope.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #d9e6f5"><img class="cimg" src="assets/hopecope-hero.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">Hope &amp; Cope</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">Helping patients and caregivers find cancer support at the right time.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+            <a href="manela.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #f3f6ff"><img class="cimg" src="assets/manela-onboarding.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">Manela</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">A SaaS platform for parental leave planning.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+            <a href="university-of-montreal.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #f3f6ff"><img class="cimg" src="assets/udem-campus.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">University of Montreal</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">Making the new French admission requirements easier to understand.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+            <a href="planmonark.html" class="carcard" style="flex: 0 0 calc(50% - 8px); min-width: 0; display: flex; flex-direction: column; text-decoration: none; color: #252a36; background: #ffffff; border: 1px solid rgba(47,107,255,.16); border-radius: 16px; overflow: hidden">
+              <div style="overflow: hidden; background: #ffffff"><img class="cimg" src="assets/planmonark-menus.webp" alt="" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></div>
+              <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+                <span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em">PlanMonark</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #46506a">A usability evaluation (n=16) of a survey creation platform.</span>
+                <span style="margin-top: 4px; font-size: 14px; font-weight: 600; color: #2a5ad6">View case study →</span>
+              </div>
+            </a>
+          
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <div id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Enlarged image" style="position: fixed; inset: 0; z-index: 50; overflow-y: auto; background: rgba(20,24,34,.86); box-sizing: border-box; padding: 64px 20px 40px; display: flex; justify-content: center; align-items: flex-start; cursor: zoom-out">
+    <button type="button" data-close-btn aria-label="Close enlarged image" style="position: fixed; top: 16px; right: 16px; width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(255,255,255,.3); background: rgba(255,255,255,.12); color: #ffffff; font-size: 22px; line-height: 1; cursor: pointer">×</button>
+    <img id="lightbox-img" src="" alt="" style="display: block; width: auto; max-width: min(1400px, 100%); height: auto; margin: auto 0; border-radius: 10px; background: #ffffff; box-shadow: 0 30px 80px -20px rgba(0,0,0,.6); cursor: default">
+  </div>
+
+</div>
+<script>
+(function () {
+  var lb = document.getElementById('lightbox'), lbImg = document.getElementById('lightbox-img'), last = null;
+  function close() { lb.hidden = true; lbImg.src = ''; document.body.style.overflow = ''; if (last) last.focus(); }
+  document.querySelectorAll('[data-zoom]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var img = b.querySelector('img'); if (!img) return;
+      last = b; lbImg.src = img.currentSrc || img.src; lbImg.alt = img.alt || '';
+      lb.hidden = false; document.body.style.overflow = 'hidden'; lb.querySelector('[data-close-btn]').focus();
+    });
+  });
+  lb.addEventListener('click', function (e) { if (e.target !== lbImg) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !lb.hidden) close(); });
+  var track = document.querySelector('.cartrack');
+  var next = document.querySelector('[data-car="next"]'), prev = document.querySelector('[data-car="prev"]');
+  if (track && next && prev) {
+    next.addEventListener('click', function () { track.appendChild(track.firstElementChild); });
+    prev.addEventListener('click', function () { track.insertBefore(track.lastElementChild, track.firstElementChild); });
+  }
+})();
+</script>
+</body>
+</html>
